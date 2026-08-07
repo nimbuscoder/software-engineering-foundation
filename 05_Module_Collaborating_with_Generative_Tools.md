@@ -6,6 +6,8 @@ This module teaches you how to work with computer systems that can generate solu
 
 The ideas start from everyday situations. Short code examples are included to make the ideas clearer.
 
+**Python playground:** Use the [Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro) to try code examples from this module.
+
 **Estimated total time:** 4–6 hours
 
 **Core objectives:**

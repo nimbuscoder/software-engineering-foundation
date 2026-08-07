@@ -4,6 +4,8 @@
 
 This module helps you learn to think in clear, ordered steps and to describe simple behaviour with precision. You will use Python because its wording is easy to read. This lets you focus on ideas instead of complicated rules. The main goal is to understand why a set of instructions produces a particular result.
 
+**Python playground:** Use the [Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro) to try code examples from this module.
+
 **Estimated total time:** 4–6 hours (short lessons)
 
 **Core objectives:**

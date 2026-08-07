@@ -6,6 +6,8 @@ This module helps you understand how to organise information, why some ways of d
 
 The ideas start from everyday situations you can easily picture. Only after you have tried the concrete activity do we give the idea a clear name.  
 
+**Python playground:** Use the [Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro) to try code examples from this module.
+
 **Estimated total time:** 5–7 hours
 
 **Core objectives:**

@@ -6,6 +6,8 @@ This module teaches you how to describe clearly what a system should do, how to 
 
 The ideas begin with everyday situations you can picture. Formal names for the ideas are introduced only after you have practised the underlying action. Short code examples are included to make the ideas clearer.
 
+**Python playground:** Use the [Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro) to try code examples from this module.
+
 **Estimated total time:** 5–7 hours
 
 **Core objectives:**

@@ -4,6 +4,8 @@
 
 This final module places the technical skills developed earlier into a wider context. You will explore the value of domain knowledge, the importance of clear communication, and the responsibilities that accompany the creation and deployment of software systems. The emphasis remains on precise thinking and careful examination, now applied to questions of purpose, impact, and continuous improvement.
 
+**Python playground:** Use the [Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro) to try code examples from this module.
+
 **Estimated total time:** 3–5 hours
 
 **Core objectives:**

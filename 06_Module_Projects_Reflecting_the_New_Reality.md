@@ -4,6 +4,8 @@
 
 This module consolidates all previous skills through projects that require precise specification, meaningful constraints, interface design, generation or implementation, and rigorous evaluation. The projects are intentionally small yet realistic. Each forces you to confront trade-offs and to practise the full cycle of description, creation, and examination.
 
+**Python playground:** Use the [Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro) to try code examples from this module.
+
 **Estimated total time:** 6–9 hours (distributed across several sessions)
 
 **Core objectives:**
