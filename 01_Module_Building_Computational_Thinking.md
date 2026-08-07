@@ -2,17 +2,19 @@
 
 ## Module Overview
 
-This module helps you learn to think in clear, ordered steps and to describe simple behaviour with precision. You will use Python because its wording is easy to read. This lets you focus on ideas instead of complicated rules. The main goal is to understand why a set of instructions produces a particular result.
+This module establishes the foundational habit of precise, ordered description. Students learn to break everyday tasks into exact steps, to express simple behaviour in Python, and to examine results against the original intention. These habits form the base upon which later modules build specification, constraint design, and collaboration with generative tools.
+
+Python is used because its wording is readable, allowing attention to remain on ideas rather than on complicated rules.
 
 **Python playground:** Use the [Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro) to try code examples from this module.
 
 **Estimated total time:** 4–6 hours (short lessons)
 
 **Core objectives:**
-- Break everyday tasks into precise, ordered steps.
+- Break everyday tasks into precise, ordered steps that leave no room for guessing.
 - Express simple behaviour using variables, decisions, repetition, and functions.
-- Write a clear description of what should happen before you create any instructions.
-- Examine every result and ask why it works and when it might fail.
+- Write a clear description of required behaviour before creating any instructions.
+- Examine every result and ask both why it works and under what conditions it would fail.
 
 ---
 
@@ -51,8 +53,9 @@ Every step says exactly what to do, with what, and (when needed) how long or how
 **Reflection:**
 - Why does the order of steps matter?
 - What happens if a step is missing or written vaguely?
+- How does writing precise, constrained steps prepare you to give clear instructions later, including to a computer helper?
 
-**Principle focus:** Writing precise descriptions before any implementation; asking when something would fail.
+**Principle focus:** Writing precise descriptions before any implementation; asking when something would fail. This habit of exact, ordered, constrained description is the foundation for effective collaboration with generative tools in later modules.
 
 ---
 

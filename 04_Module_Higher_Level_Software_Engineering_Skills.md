@@ -16,6 +16,7 @@ The ideas begin with everyday situations you can picture. Formal names for the i
 - Make clear agreements between different parts of a system.
 - Turn requirements into concrete checks that can be tested.
 - Examine a solution carefully against its description instead of accepting it quickly.
+- Build the precision and constraint habits that later enable high-quality structured collaboration with generative tools.
 
 ---
 
@@ -366,5 +367,6 @@ Before moving to Module 05, confirm that you can:
 - Define a clear agreement between two parts of a system.
 - Examine a solution systematically against its description.
 - Distinguish between a problem in the description and a problem in the solution.
+- Recognise that the same habits of precise description and explicit constraints prepare you to direct generative tools effectively.
 
 Record a short reflection on how writing the description first changes the quality of the final result.

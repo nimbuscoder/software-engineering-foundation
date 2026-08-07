@@ -13,6 +13,7 @@ Each project is designed so that you can complete it using the ideas from earlie
 **Core objectives:**
 - Apply systems thinking to problems that involve real rules and trade-offs.
 - Write complete descriptions before building or generating any solution.
+- When using a generative tool, convert the description into a structured request (Purpose, Rules, Examples, Constraints, Self-check) and examine the result systematically.
 - Design simple agreements between parts of a system.
 - Examine solutions carefully and improve them based on what you find.
 - Record your decisions and the reasons behind them.
@@ -39,10 +40,53 @@ Imagine you want to keep track of classroom supplies or personal books. You need
 **Project brief**  
 Create a simple tracker for a limited set of items (for example: classroom supplies, personal books, or points in a game). The system must enforce at least two clear rules (examples: quantity cannot become negative; a maximum value cannot be exceeded; certain items cannot be removed once added).
 
-**Suggested concrete example structure**  
-- Items: pencils, notebooks, erasers
-- Rules: quantity cannot go below 0; no item can have more than 20 units
-- Actions: add stock, remove stock, show current amounts
+**Concrete worked example (Classroom Supply Tracker)**  
+
+You may use this example as a model or choose a different set of items. The important elements are the complete description, the explicit rules, and the careful examination.
+
+**Description**
+- Purpose: Keep track of three classroom supplies (pencils, notebooks, erasers) so that quantities never become negative and never exceed a maximum of 20 units each.
+- Information stored: current quantity of each item.
+- Allowed actions: add stock, remove stock, show current amounts.
+- Rules that must never be broken:
+  1. Quantity of any item cannot go below 0.
+  2. Quantity of any item cannot exceed 20.
+  3. Only the three named items are allowed.
+- Edge cases and required behaviour:
+  - Trying to remove more than the current quantity → refuse the action and show a clear message.
+  - Trying to add an amount that would exceed 20 → refuse the action and show a clear message.
+  - Using an unknown item name → show “Item not found.”
+  - Using a non-positive amount → show “Amount must be positive.”
+
+**Model structured request** (for use with a generative tool)
+
+```
+Please create a simple Python program for a classroom supply tracker.
+
+Purpose:
+Track quantities of pencils, notebooks and erasers. Quantities must never go below 0 and never exceed 20.
+
+Rules (these must never be broken):
+- Only the three items “pencils”, “notebooks” and “erasers” are allowed.
+- Quantity of any item cannot become negative.
+- Quantity of any item cannot exceed 20.
+- Amounts must be positive whole numbers.
+
+Examples of correct behaviour:
+- Starting quantities: pencils=10, notebooks=5, erasers=8
+- remove(“pencils”, 3) → pencils becomes 7
+- remove(“pencils”, 20) when only 7 remain → “Not enough items.”
+- add(“notebooks”, 20) when already 5 → “Would exceed maximum of 20.”
+- show() → display all current quantities
+
+Constraints:
+- Use a dictionary to store the quantities.
+- Keep the program simple and readable for a beginner.
+- Do not add extra features.
+
+Self-check (required before you finish):
+Verify that every rule and every example is satisfied. Correct any problem and re-check before presenting the final program and a short explanation.
+```
 
 **Simple code sketch (for illustration only)**
 
@@ -70,9 +114,9 @@ def remove_item(item, amount):
 **Activity:**
 1. Write a complete description that includes purpose, information to store, allowed actions, rules, edge cases, and concrete checks.
 2. Design how the information is organised and the agreements between the main parts.
-3. Build or generate a solution only after the description is finished.
+3. Build or generate a solution only after the description is finished. If you use a generative tool, first convert the description into a structured request (Purpose, Rules, Examples, Constraints, Self-check).
 4. Examine the solution against every rule and concrete check.
-5. Refine if needed.
+5. Refine if needed (by improving the request design or the implementation).
 6. Produce a short project note that states:
    - The most important rule and why it mattered
    - One trade-off you considered
@@ -219,12 +263,65 @@ Select a practical mini-system that a student of similar age might use. The syst
 - A reading log that tracks books and enforces a weekly goal
 - A classroom points system with maximum scores and simple penalties
 
+**Concrete worked example (Study Session Timer)**  
+
+You may follow this example or design a different system. The important elements are multiple real rules, at least one clear agreement between parts, a structured request, and careful examination.
+
+**Description**
+- Purpose: Help a student manage focused study sessions with mandatory short breaks.
+- Information stored: current session length in minutes, whether the student is in a work period or a break period.
+- Parts of the system:
+  - Part A (Session Controller): accepts the desired work length and checks that it is valid.
+  - Part B (Timer Display): receives only a valid work length and manages the work/break cycle.
+- Agreement between parts:
+  - Part A may pass only a whole number between 15 and 50 inclusive.
+  - Part B assumes the number it receives is already valid and never re-checks the range.
+  - If Part A cannot obtain a valid number, it must not call Part B.
+- Rules that must never be broken:
+  1. Work sessions must be between 15 and 50 minutes inclusive.
+  2. After every work session a break of exactly 5 minutes is required before another work session can start.
+  3. The system must never allow a work session longer than 50 minutes.
+- Edge cases and required behaviour:
+  - Input 10 → “Work session must be between 15 and 50 minutes.”
+  - Input 60 → “Work session must be between 15 and 50 minutes.”
+  - Input 25 → start a 25-minute work period, then enforce a 5-minute break.
+  - Empty or non-numeric input → “Please enter a whole number.”
+
+**Model structured request** (for use with a generative tool)
+
+```
+Please create a simple Python program for a study-session timer.
+
+Purpose:
+Help a student manage focused study sessions. Work sessions must be between 15 and 50 minutes. After every work session a 5-minute break is required.
+
+Rules (these must never be broken):
+- Accept only whole numbers between 15 and 50 inclusive for the work length.
+- After every completed work session, enforce a 5-minute break before another work session can begin.
+- Never allow a work session longer than 50 minutes.
+- Keep the program simple and readable for a beginner.
+
+Examples of correct behaviour:
+- Input 25 → begin a 25-minute work period, then require a 5-minute break.
+- Input 10 → “Work session must be between 15 and 50 minutes.”
+- Input 60 → “Work session must be between 15 and 50 minutes.”
+- Input “abc” → “Please enter a whole number.”
+
+Constraints:
+- Use two clear parts (functions): one that checks and accepts the work length, and one that runs the work/break cycle.
+- The checking part must never pass an invalid value to the timer part.
+- Do not add extra features such as sound or graphics.
+
+Self-check (required before you finish):
+Verify that every rule and every example is satisfied. Confirm that an invalid length is rejected before the timer part is called. Correct any problem and re-check before presenting the final program and a short explanation.
+```
+
 **Activity:**
 1. Write a complete description.
 2. Define the agreements between parts.
-3. Prepare a high-quality request if using a generative tool, or build carefully if working manually.
+3. Prepare a high-quality structured request (Purpose, Rules, Examples, Constraints, Self-check) if using a generative tool, or build carefully if working manually.
 4. Examine the result against every part of the description.
-5. Improve the solution at least once based on what you found.
+5. Improve the solution at least once based on what you found (preferably by refining the request design).
 6. Produce a final project summary that includes:
    - The purpose of the system
    - The key rules and why they were chosen
@@ -242,6 +339,7 @@ Select a practical mini-system that a student of similar age might use. The syst
 
 Before moving to Module 07, confirm that you can:
 - Complete a full cycle from precise description to examined solution under real rules.
+- When using generative tools, convert descriptions into structured requests and examine the results systematically.
 - Define and respect a simple agreement between parts.
 - Make and explain a conscious trade-off.
 - Document the reasoning behind key decisions and examination findings.
