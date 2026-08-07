@@ -2,9 +2,9 @@
 
 ## Module Overview
 
-This module consolidates all previous skills through projects that require precise specification, meaningful constraints, interface design, generation or implementation, and rigorous evaluation. The projects are intentionally small yet realistic. Each forces the student to confront trade-offs and to practise the full cycle of description, creation, and examination.
+This module consolidates all previous skills through projects that require precise specification, meaningful constraints, interface design, generation or implementation, and rigorous evaluation. The projects are intentionally small yet realistic. Each forces you to confront trade-offs and to practise the full cycle of description, creation, and examination.
 
-**Estimated total time:** 6–9 hours (distributed across several sessions).
+**Estimated total time:** 6–9 hours (distributed across several sessions)
 
 **Core objectives:**
 - Apply systems thinking to problems that involve real constraints and trade-offs.
@@ -21,7 +21,15 @@ This module consolidates all previous skills through projects that require preci
 
 **Goal:** Design and evaluate a small system that must enforce clear rules about the information it stores.
 
-**Project brief:**
+**Expected outcomes (checklist)**  
+By the end of this project you should be able to:
+- [ ] Write a complete specification that includes purpose, data, actions, constraints, edge cases, interfaces, and acceptance criteria.
+- [ ] Design the organisation of information and the interfaces.
+- [ ] Obtain or create a solution only after the specification is finished.
+- [ ] Evaluate the solution against every criterion and constraint.
+- [ ] Produce a short project report covering the most important constraint, one trade-off, and the most useful discovery made during examination.
+
+**Project brief:**  
 Create a simple tracker for a limited set of items (for example, classroom supplies, personal books, or points in a game). The system must enforce at least two constraints (examples: quantity cannot become negative; a maximum value cannot be exceeded; certain items may not be removed once added).
 
 **Required steps:**
@@ -47,7 +55,16 @@ Create a simple tracker for a limited set of items (for example, classroom suppl
 
 **Goal:** Practise defining and respecting an interface between two independently understandable parts.
 
-**Project brief:**
+**Expected outcomes (checklist)**  
+By the end of this project you should be able to:
+- [ ] Write a full specification for the overall system and a separate, precise description of the interface.
+- [ ] Ensure the interface states what information is passed, its expected form, and the responsibilities of each part.
+- [ ] Implement or generate the two parts so that they follow the interface.
+- [ ] Test each part independently as far as possible, then test the combined system.
+- [ ] Deliberately introduce a small violation of the interface, observe the effect, then restore correct behaviour.
+- [ ] Document why the interface made examination and correction easier.
+
+**Project brief:**  
 Design a small system that consists of two distinct parts. One part collects and validates input. The other part performs a calculation or transformation and produces a result. The two parts must communicate only through a clearly defined interface.
 
 **Required steps:**
@@ -70,7 +87,15 @@ Design a small system that consists of two distinct parts. One part collects and
 
 **Goal:** Confront a situation in which two desirable qualities cannot be maximised at the same time, and make a reasoned choice.
 
-**Project brief:**
+**Expected outcomes (checklist)**  
+By the end of this project you should be able to:
+- [ ] Write a specification that explicitly names two competing qualities and states which one will be preferred and why.
+- [ ] Include acceptance criteria that reflect the chosen priority.
+- [ ] Produce a solution that follows the stated priority.
+- [ ] Evaluate the solution against the criteria.
+- [ ] Write a short analysis of what was gained and what was given up by the chosen priority.
+
+**Project brief:**  
 Choose a small problem that involves a genuine trade-off (examples: a scoring system that can be either very strict or more forgiving; a converter that can prioritise speed of response or thoroughness of validation; a simple advisor that can give short answers or more detailed explanations). The system must make the trade-off visible in its specification and behaviour.
 
 **Required steps:**
@@ -93,7 +118,15 @@ Choose a small problem that involves a genuine trade-off (examples: a scoring sy
 
 **Goal:** Integrate specification, interface design, generation or implementation, rigorous evaluation, and documentation in one sustained project.
 
-**Project brief:**
+**Expected outcomes (checklist)**  
+By the end of this project you should be able to:
+- [ ] Write a complete specification for a practical mini-system that includes at least three constraints and at least one clear interface.
+- [ ] Define the interfaces.
+- [ ] Prepare a high-quality request (or implement carefully).
+- [ ] Examine the result against every part of the specification and iterate at least once.
+- [ ] Produce a final project summary covering purpose, key constraints, most important examination finding, one improvement, and a short statement of what the project taught about systems thinking or precise problem formulation.
+
+**Project brief:**  
 Select a practical mini-system that a student of similar age might actually use (examples: a study-session timer with rules about breaks, a simple reading log that enforces weekly goals, a points system for a classroom challenge with maximums and penalties). The system must include at least three constraints and at least one clear interface between parts.
 
 **Required steps:**

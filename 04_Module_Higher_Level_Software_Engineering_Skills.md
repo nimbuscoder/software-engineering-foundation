@@ -2,9 +2,9 @@
 
 ## Module Overview
 
-This module shifts attention to the skills that become central when artificial intelligence systems can generate implementations. The student learns to write precise specifications, define clear interfaces, state constraints, and evaluate results rigorously. Implementation remains secondary to the quality of the description and the thoroughness of examination.
+This module shifts attention to the skills that become central when artificial intelligence systems can generate implementations. You will learn to write precise specifications, define clear interfaces, state constraints, and evaluate results rigorously. Implementation remains secondary to the quality of the description and the thoroughness of examination.
 
-**Estimated total time:** 5–7 hours.
+**Estimated total time:** 5–7 hours
 
 **Core objectives:**
 - Write complete and unambiguous specifications that include purpose, behaviour, constraints, and acceptance criteria.
@@ -19,6 +19,12 @@ This module shifts attention to the skills that become central when artificial i
 **Duration:** 30–40 minutes
 
 **Goal:** Practise producing a specification that is precise enough for another person (or a generative system) to implement without further questions.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Choose a small system and write a specification that includes purpose, inputs, outputs, behaviour with unexpected input, and at least two concrete examples of correct behaviour.
+- [ ] Review the specification and remove any remaining ambiguity.
+- [ ] Keep the focus solely on the quality of the description (do not implement yet).
 
 **Activity:**
 1. Choose a small system (example: a tool that converts a temperature from Celsius to Fahrenheit and advises the user about clothing).
@@ -45,6 +51,12 @@ This module shifts attention to the skills that become central when artificial i
 
 **Goal:** Extend a specification with explicit constraints and with situations that sit at the boundaries of normal use.
 
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Add at least three constraints to a specification.
+- [ ] List at least four edge cases and state the required behaviour for each.
+- [ ] Review the completed specification for completeness.
+
 **Activity:**
 1. Take the specification from Lesson 4.1 (or write a new one for a different small system).
 2. Add at least three constraints (examples: the input must be a number within a certain range; the system must never display a negative temperature advice; the response must appear within a short time).
@@ -65,6 +77,13 @@ This module shifts attention to the skills that become central when artificial i
 **Duration:** 30–40 minutes
 
 **Goal:** Practise describing the agreement that must exist between different parts of a system.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Design a small system that has at least two distinct parts.
+- [ ] Write a clear interface description that includes what information is passed, its form, what each part may assume, and what should happen if the agreement is broken.
+- [ ] Keep the focus on the interface only (do not implement the parts yet).
+- [ ] Check whether the interface is clear enough for independent implementation.
 
 **Activity:**
 1. Design a small system that has at least two distinct parts (example: one part that collects and validates user input, and another part that performs a calculation and produces a result).
@@ -90,9 +109,15 @@ This module shifts attention to the skills that become central when artificial i
 
 **Goal:** Learn to state concrete conditions that must be true for a solution to be considered acceptable.
 
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Convert the most important requirements into acceptance criteria that are specific and testable.
+- [ ] Write at least five acceptance criteria in the form “When the input is X, the system must produce Y.”
+- [ ] Note any part of the original specification that is still difficult to turn into a clear criterion.
+
 **Activity:**
 1. Return to a specification written earlier.
-2. Convert the most important requirements into acceptance criteria. Each criterion should be written so that it is possible to test whether it has been met.
+2. Convert the most important requirements into acceptance criteria. Each criterion should be written so that it is possible to test whether it has been met.  
    Example form: “When the input is X, the system must produce Y.”
 3. Write at least five acceptance criteria.
 4. Review them to ensure they are specific and testable.
@@ -111,6 +136,13 @@ This module shifts attention to the skills that become central when artificial i
 **Duration:** 40–50 minutes
 
 **Goal:** Practise examining an implementation against a complete specification rather than merely checking that it “seems to work”.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Create a simple test plan that covers normal cases, every stated edge case, and every constraint.
+- [ ] Execute the test plan and record the results carefully.
+- [ ] For any failure, decide whether the specification needs improvement or the implementation is incorrect.
+- [ ] Write a short evaluation report that states whether the solution meets the specification and why.
 
 **Activity:**
 1. Take a complete specification (including constraints, edge cases, and acceptance criteria).
@@ -136,6 +168,15 @@ This module shifts attention to the skills that become central when artificial i
 **Duration:** 50–70 minutes
 
 **Goal:** Complete a full cycle of precise specification, interface definition, implementation (or generation), and rigorous evaluation under real constraints.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Choose a small but non-trivial tool that involves at least one meaningful constraint.
+- [ ] Write a full specification including purpose, inputs, outputs, constraints, edge cases, interfaces, and acceptance criteria.
+- [ ] Implement or generate the solution only after the specification is complete.
+- [ ] Evaluate the solution systematically against every part of the specification.
+- [ ] Revise either the specification or the solution until the acceptance criteria are met.
+- [ ] Document the most important change that resulted from the examination process.
 
 **Activity:**
 1. Choose a small but non-trivial tool that involves at least one meaningful constraint (examples: a simple budget tracker that never allows a negative balance, a classroom point system that enforces maximum scores, or a unit converter that rejects impossible values).

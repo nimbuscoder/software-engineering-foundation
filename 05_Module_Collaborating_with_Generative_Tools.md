@@ -2,9 +2,9 @@
 
 ## Module Overview
 
-This module develops the practical habits required to work effectively with systems that generate solutions from descriptions. The student learns to provide precise instructions, to request useful intermediate explanations, to examine outputs critically, and to iterate on constraints when the first result is unsatisfactory. The generative tool is treated as a powerful but imperfect collaborator.
+This module develops the practical habits required to work effectively with systems that generate solutions from descriptions. You will learn to provide precise instructions, to request useful intermediate explanations, to examine outputs critically, and to iterate on constraints when the first result is unsatisfactory. The generative tool is treated as a powerful but imperfect collaborator.
 
-**Estimated total time:** 4–6 hours.
+**Estimated total time:** 4–6 hours
 
 **Core objectives:**
 - Formulate clear and complete requests for a generative system.
@@ -19,6 +19,13 @@ This module develops the practical habits required to work effectively with syst
 **Duration:** 25–35 minutes
 
 **Goal:** Practise turning a specification into a request that gives a generative system the best chance of producing a useful result.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Rewrite a specification as a clear request addressed to a generative assistant.
+- [ ] Include purpose, required behaviour, explicit constraints, handling of invalid input, and a request for a brief explanation of the approach.
+- [ ] Compare the original specification with the request and confirm that no important detail has been lost.
+- [ ] Keep the focus on the quality of the prepared text (do not send the request yet).
 
 **Activity:**
 1. Take a short, complete specification written in an earlier module.
@@ -45,6 +52,14 @@ This module develops the practical habits required to work effectively with syst
 
 **Goal:** Develop a disciplined process for inspecting a generated solution rather than assuming it is correct.
 
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Submit a carefully prepared request and obtain a solution.
+- [ ] Read the solution carefully and compare it with the original specification before running it.
+- [ ] List any parts that appear incomplete, unclear, or different from what was requested.
+- [ ] Run the solution and test it against the acceptance criteria and edge cases.
+- [ ] Record every discrepancy and note the most important difference discovered through examination.
+
 **Activity:**
 1. Submit a carefully prepared request to a generative assistant and obtain a solution.
 2. Without running the solution yet, read it carefully and compare it with the original specification.
@@ -66,6 +81,13 @@ This module develops the practical habits required to work effectively with syst
 **Duration:** 35–45 minutes
 
 **Goal:** Learn to improve a result by refining the description and constraints rather than by discarding the generative process.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Identify the precise reason for each failure in a generated solution.
+- [ ] Write an improved request that adds or clarifies the necessary constraints and examples.
+- [ ] Obtain a new solution and examine it with the same care.
+- [ ] Document how the successive refinements improved the result.
 
 **Activity:**
 1. Take a generated solution that failed one or more acceptance criteria.
@@ -90,6 +112,14 @@ This module develops the practical habits required to work effectively with syst
 
 **Goal:** Use the generative system not only to produce a solution but also to gain insight into its reasoning and to explore alternatives.
 
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Ask the generative assistant to explain the main decisions it made.
+- [ ] Request at least one alternative approach that satisfies the same specification.
+- [ ] Compare the original solution and the alternative against the specification and against efficiency or clarity.
+- [ ] Decide which version better meets the stated goals and explain why.
+- [ ] Note any new understanding gained from the explanation.
+
 **Activity:**
 1. After obtaining a working solution, ask the generative assistant to explain the main decisions it made.
 2. Request at least one alternative approach that satisfies the same specification.
@@ -110,6 +140,12 @@ This module develops the practical habits required to work effectively with syst
 **Duration:** 25–35 minutes
 
 **Goal:** Develop judgement about situations in which a generated solution should be questioned or rejected.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Identify a limitation in a generated solution that appears to work for normal cases but fails a constraint or edge case.
+- [ ] Write a short analysis covering what the solution does correctly, what it fails to do, the source of the failure, and what additional information or constraint would be required.
+- [ ] Decide whether to continue iterating or to treat the current result as insufficient.
 
 **Activity:**
 1. Create or obtain a generated solution that appears to work for normal cases but violates a constraint or fails an edge case.
@@ -134,6 +170,15 @@ This module develops the practical habits required to work effectively with syst
 **Duration:** 50–70 minutes
 
 **Goal:** Apply the full cycle of precise request, generation, examination, and refinement to a small system that includes meaningful constraints.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Write a complete specification for a small tool that enforces at least two real constraints.
+- [ ] Prepare a high-quality request from the specification.
+- [ ] Obtain a generated solution and examine it systematically against every acceptance criterion and constraint.
+- [ ] Refine the request at least once and obtain an improved solution.
+- [ ] Produce a final evaluation that states whether the solution is acceptable and why.
+- [ ] Record the most valuable improvement that came from examination and iteration.
 
 **Activity:**
 1. Write a complete specification for a small tool that enforces at least two real constraints (examples: a simple scoring system with maximum values, a converter that rejects impossible inputs, or a tracker that never allows negative quantities).

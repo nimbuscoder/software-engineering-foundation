@@ -2,9 +2,9 @@
 
 ## Module Overview
 
-This module introduces fundamental ideas that remain valuable regardless of how software is produced. The focus is on structure, efficiency, communication between parts of a system, and the basic organisation of data. These concepts enable a student to formulate better specifications and to evaluate generated solutions with greater insight.
+This module introduces fundamental ideas that remain useful no matter how software is produced. The focus is on structure, efficiency, communication between parts of a system, and the basic organisation of data. These concepts help you write better specifications and examine generated solutions with greater insight.
 
-**Estimated total time:** 5–7 hours.
+**Estimated total time:** 5–7 hours
 
 **Core objectives:**
 - Recognise common ways of organising information and when each is appropriate.
@@ -19,6 +19,14 @@ This module introduces fundamental ideas that remain valuable regardless of how 
 **Duration:** 30–40 minutes
 
 **Goal:** Understand when information should be kept in an ordered sequence and how that organisation affects behaviour.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Write a precise description of a small task that needs items kept in order.
+- [ ] Implement the task using a list in Python.
+- [ ] Add, remove, and retrieve items by position.
+- [ ] Examine what happens when you try to retrieve an item that does not exist.
+- [ ] Explain why order matters for the task and when a different organisation might be better.
 
 **Activity:**
 1. Write a precise description of a small task that requires keeping several items in order (example: a list of three tasks for the afternoon, or the scores of three players).
@@ -41,6 +49,14 @@ This module introduces fundamental ideas that remain valuable regardless of how 
 
 **Goal:** Understand the value of associating information with clear names rather than positions.
 
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Write a precise description of a task that requires looking up information by a name or label.
+- [ ] Implement the task using a dictionary.
+- [ ] Retrieve values, add a new entry, and attempt to retrieve a name that does not exist.
+- [ ] Compare this approach with the ordered list from the previous lesson.
+- [ ] State when using the wrong kind of organisation would make a program harder to understand or more likely to fail.
+
 **Activity:**
 1. Write a precise description of a task that requires looking up information by a name or label (example: storing the ages of three friends and retrieving one friend’s age by name).
 2. Implement the task using a dictionary.
@@ -62,6 +78,14 @@ This module introduces fundamental ideas that remain valuable regardless of how 
 
 **Goal:** Develop an initial sense that different correct solutions can require different amounts of work from the computer.
 
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Write a precise description of a task that can be solved in more than one way.
+- [ ] Implement two different solutions.
+- [ ] Count, in rough terms, how many comparisons or steps each solution performs.
+- [ ] Explain why one solution might be preferable even though both produce the correct answer.
+- [ ] Consider how the difference in steps would grow with a larger version of the problem.
+
 **Activity:**
 1. Write a precise description of a task that can be solved in more than one way (example: find the largest number among five numbers).
 2. Implement two different solutions.
@@ -82,6 +106,14 @@ This module introduces fundamental ideas that remain valuable regardless of how 
 **Duration:** 30–40 minutes
 
 **Goal:** Introduce the idea that separate parts of a system can work together only if they share a clear agreement about how they communicate.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Write a precise description of the agreement (interface) between two parts of a system.
+- [ ] Implement the two parts as separate functions that follow the agreement.
+- [ ] Deliberately break the agreement in one part and observe the result.
+- [ ] Restore the agreement and confirm correct behaviour.
+- [ ] Explain why a clear interface makes it easier to examine or replace one part without damaging the other.
 
 **Activity:**
 1. Imagine two simple parts of a system: one part that collects a number from a user, and another part that doubles that number and displays the result.
@@ -105,6 +137,14 @@ This module introduces fundamental ideas that remain valuable regardless of how 
 
 **Goal:** Practise describing the information a system needs to remember and how the pieces of information relate to one another.
 
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Choose a small real-world situation and write a precise description of the information that must be stored.
+- [ ] Decide on suitable structures (lists, dictionaries, or combinations) to represent that information.
+- [ ] Implement a minimal version that can store and retrieve the information.
+- [ ] Test with normal data and with missing or unexpected data.
+- [ ] Revise the original description if testing shows that important information was omitted.
+
 **Activity:**
 1. Choose a small real-world situation (example: tracking books borrowed from a classroom library, or recording scores for a simple game).
 2. Write a precise description of the information that must be stored and the relationships between the pieces of information.
@@ -126,6 +166,15 @@ This module introduces fundamental ideas that remain valuable regardless of how 
 **Duration:** 45–60 minutes
 
 **Goal:** Combine organisation of data, efficiency awareness, and clear interfaces in a constrained project.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Define a small system that must store and retrieve information under at least one real constraint.
+- [ ] Write a complete specification that includes purpose, information, actions, constraint, and response to invalid input.
+- [ ] Design the data organisation and the interfaces between the main parts.
+- [ ] Implement the system.
+- [ ] Test thoroughly against the specification, paying special attention to the constraint and invalid inputs.
+- [ ] Record any changes made to the specification after examining the first implementation.
 
 **Activity:**
 1. Define a small system that must store and retrieve information under at least one real constraint (example: a simple inventory of five items that must not allow negative quantities, or a list of tasks that must keep track of whether each task is finished).

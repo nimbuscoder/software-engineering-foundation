@@ -4,13 +4,15 @@
 
 ### Purpose of This Syllabus
 
-This syllabus prepares a student to develop strong systems thinking, precise problem formulation, and the ability to evaluate machine-generated artefacts. It is designed for a time in which artificial intelligence can generate efficient binary instructions directly from clear descriptions of intent. In such an environment, the most valuable skills are not the memorisation of programming language syntax, but the capacity to define problems accurately, structure solutions thoughtfully, and critically examine the results produced by generative systems.
+This syllabus helps a student develop strong systems thinking, precise problem formulation, and the ability to evaluate machine-generated solutions. It is designed for a future in which artificial intelligence can generate efficient computer instructions directly from clear descriptions of what is needed.
 
-The materials follow seven progressive modules that correspond to a carefully sequenced learning path. Each module is divided into short, self-contained lessons suitable for independent study.
+In that environment, the most valuable skills are not memorising programming language rules. The most valuable skills are the ability to define problems accurately, structure solutions carefully, and examine results critically.
+
+The materials are organised into seven progressive modules. Each module contains short, self-contained lessons suitable for independent study.
 
 ### Guiding Principles
 
-Every lesson and activity in this syllabus is built upon the following principles. The student should return to these principles regularly:
+Every lesson follows these five principles. Return to them often:
 
 - Prioritise understanding over memorisation of syntax.
 - Treat every generated solution as something to be examined, not merely accepted.
@@ -35,17 +37,17 @@ By completing this syllabus, the student will be able to:
 ### How to Use These Materials
 
 - Work through the modules in order. Each module builds on the previous one.
-- Complete one short lesson at a time. Most lessons are designed to be finished in 20–40 minutes.
+- Complete one short lesson at a time. Most lessons take 20–40 minutes.
 - Keep a dedicated notebook (physical or digital) for writing specifications, reflections, and observations.
 - After every activity that involves generating a solution, pause and examine the result carefully.
-- Do not rush. Understanding is more important than speed or volume of work completed.
+- Do not rush. Understanding is more important than speed or the amount of work completed.
 - Revisit earlier lessons whenever a concept feels unclear.
 
 ### Recommended Tools
 
-- A free online Python environment (for example, an online code editor that requires no installation).
+- A free online Python environment (an online code editor that requires no installation).
 - A simple text editor or notebook for writing precise descriptions and reflections.
-- Access to a generative AI assistant (to be used only after writing a clear specification, and always followed by careful examination of the output).
+- Access to a generative AI assistant (use it only after writing a clear specification, and always examine the output carefully).
 
 ### Structure of the Syllabus
 

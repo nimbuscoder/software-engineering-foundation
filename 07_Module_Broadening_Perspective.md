@@ -2,9 +2,9 @@
 
 ## Module Overview
 
-This final module places the technical skills developed earlier into a wider context. The student explores the value of domain knowledge, the importance of clear communication, and the responsibilities that accompany the creation and deployment of software systems. The emphasis remains on precise thinking and careful examination, now applied to questions of purpose, impact, and continuous improvement.
+This final module places the technical skills developed earlier into a wider context. You will explore the value of domain knowledge, the importance of clear communication, and the responsibilities that accompany the creation and deployment of software systems. The emphasis remains on precise thinking and careful examination, now applied to questions of purpose, impact, and continuous improvement.
 
-**Estimated total time:** 3–5 hours.
+**Estimated total time:** 3–5 hours
 
 **Core objectives:**
 - Recognise that domain knowledge improves the quality of specifications and evaluations.
@@ -19,6 +19,13 @@ This final module places the technical skills developed earlier into a wider con
 **Duration:** 30–40 minutes
 
 **Goal:** Understand why knowledge of a particular subject area strengthens both problem formulation and the examination of solutions.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Choose a domain that interests you and identify a small problem within it that could be assisted by a software system.
+- [ ] Write a precise specification for a solution, paying special attention to details that only someone familiar with the domain would know to include.
+- [ ] List at least three pieces of domain knowledge that made the specification better than a generic description would have been.
+- [ ] Explain how that same domain knowledge would help when examining a generated solution.
 
 **Activity:**
 1. Choose a domain that interests you (examples: sports, music, school subjects, simple games, household organisation, or environmental observation).
@@ -41,6 +48,13 @@ This final module places the technical skills developed earlier into a wider con
 
 **Goal:** Practise expressing requirements, constraints, and evaluation findings so that another person can understand them without ambiguity.
 
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Rewrite the most important sections of a specification or evaluation report as if explaining them to a classmate who has not seen the original work.
+- [ ] Focus on clarity, order, and the removal of hidden assumptions.
+- [ ] Check understanding by asking (or imagining asking) the classmate to restate the requirements.
+- [ ] Improve the written explanation until the main ideas transfer accurately.
+
 **Activity:**
 1. Take a specification or an evaluation report written in an earlier module.
 2. Rewrite the most important sections as if explaining them to a classmate who has not seen the original work.
@@ -61,6 +75,12 @@ This final module places the technical skills developed earlier into a wider con
 **Duration:** 30–40 minutes
 
 **Goal:** Begin to consider the effects that software systems can have on people and the importance of reliability and care.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Select one of the systems designed in Module 06 and write a short analysis covering who might use it, what could go wrong if constraints fail, what information needs protection, and a responsible response to a serious error.
+- [ ] Identify one concrete step that could reduce the risk of harm.
+- [ ] Reflect on why the ability to examine solutions carefully is connected to responsibility.
 
 **Activity:**
 1. Select one of the systems designed in Module 06.
@@ -86,6 +106,12 @@ This final module places the technical skills developed earlier into a wider con
 
 **Goal:** Create a simple, sustainable plan for continued learning that keeps the guiding principles at the centre.
 
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] For each of the five guiding principles, write one concrete practice you will continue.
+- [ ] Choose one technical area and one broader area to strengthen next.
+- [ ] Write a short three-month learning intention that includes what you will study, how you will apply the guiding principles, and how you will know you are making progress (in terms of clarity of thinking and quality of examination).
+
 **Activity:**
 1. Review the five guiding principles listed in the syllabus overview.
 2. For each principle, write one concrete practice you will continue (example: “Before asking any generative tool for a solution, I will write a full specification in my notebook”).
@@ -109,6 +135,11 @@ This final module places the technical skills developed earlier into a wider con
 **Duration:** 40–60 minutes
 
 **Goal:** Integrate the entire learning path into a coherent personal understanding.
+
+**Expected outcomes (checklist)**  
+By the end of this lesson you should be able to:
+- [ ] Write a structured reflection (approximately one to two pages) that addresses the most important change in approach, the effect of writing precise descriptions first, an example of careful examination revealing something important, the difference between systems thinking and simply making something that appears to work, and one further question you now want to explore.
+- [ ] Review the reflection for clarity and honesty.
 
 **Activity:**
 1. Write a structured reflection (approximately one to two pages) that addresses the following:
