@@ -1,0 +1,40 @@
+title: Software Engineering Foundations
+description: >-
+  A self-study syllabus for young learners (ages 12–15) — systems thinking,
+  precise problem formulation, and evaluating machine-generated solutions.
+url: https://nimbuscoder-io.github.io
+baseurl: /software-engineering-foundation
+repository: nimbuscoder-io/software-engineering-foundation
+show_downloads: false
+
+remote_theme: pages-themes/architect@v0.2.0
+
+plugins:
+  - jekyll-remote-theme
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - scripts/
+  - Makefile
+  - .gitignore
+  - vendor/
+  - .venv/
+  - .github/
+  - docs/
+  - site/
+  - 00_Syllabus_Overview.md
+  - 01_Module_Building_Computational_Thinking.md
+  - 02_Module_Understanding_Under_the_Hood.md
+  - 03_Module_Core_Computer_Science_Foundations.md
+  - 04_Module_Higher_Level_Software_Engineering_Skills.md
+  - 05_Module_Collaborating_with_Generative_Tools.md
+  - 06_Module_Projects_Reflecting_the_New_Reality.md
+  - 07_Module_Broadening_Perspective.md

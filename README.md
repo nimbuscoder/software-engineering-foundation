@@ -15,48 +15,60 @@ Open the [course site](https://nimbuscoder-io.github.io/software-engineering-fou
 
 ### Quick start
 
-**Prerequisites:** Python 3.10+, Git
+**Prerequisites:** Ruby 3.x, Bundler, Git
+
+macOS ships with Ruby 2.6, which is too old. Install Ruby 3.3 with Homebrew:
+
+```bash
+brew install ruby@3.3
+export PATH="/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"
+```
+
+Add that `export` line to your shell profile (`~/.zshrc`) so it persists.
+
+No `pip install` or `requirements.txt` — the site uses Jekyll (Ruby), not MkDocs (Python).
 
 ```bash
 git clone https://github.com/nimbuscoder-io/software-engineering-foundation.git
 cd software-engineering-foundation
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+bundle install
 make serve
 ```
 
-Preview at [http://127.0.0.1:8000/software-engineering-foundation/](http://127.0.0.1:8000/software-engineering-foundation/).  
+Preview at [http://127.0.0.1:4000/software-engineering-foundation/](http://127.0.0.1:4000/software-engineering-foundation/).  
 Pushing to `main` deploys automatically via [GitHub Actions](.github/workflows/deploy.yml).
+
+The site uses the [Architect Jekyll theme](https://github.com/pages-themes/architect) for GitHub Pages.
 
 ### What to edit
 
 | Edit these | Do not edit |
 |------------|-------------|
-| `00_Syllabus_Overview.md` | `docs/module-*/` (generated) |
-| `*_Module_*.md` | `docs/index.md`, `docs/.pages` (generated) |
-| `docs/stylesheets/`, `docs/javascripts/`, `docs/assets/` | `site/` (build output) |
-| `mkdocs.yml`, `scripts/`, `.github/workflows/` | |
+| `00_Syllabus_Overview.md` | `index.md`, `module-*.md` (generated) |
+| `*_Module_*.md` | `_site/` (build output) |
+| `_config.yml`, `assets/css/style.scss` | |
+| `scripts/`, `.github/workflows/` | |
 
-**Source of truth:** root-level markdown files. The build script splits each module into lesson pages under `docs/`.
+**Source of truth:** root-level markdown files. The build script generates Jekyll pages before each build.
 
 ### Content conventions
 
-When editing modules, keep these patterns so the site builds correctly:
+When editing modules:
 
 - Module title: `# Module 0X: …`
 - Module overview: `## Module Overview`
-- Lessons: `## Lesson X.Y – Title` (exact heading format — the splitter relies on it)
+- Lessons: `## Lesson X.Y – Title`
 - Python playground link in each module overview (see existing modules for wording)
 
-After editing content, run `make serve` (or `make build`) to regenerate and verify before opening a pull request.
+After editing content, run `make build` locally and fix any errors before opening a pull request.
 
 ### Commands
 
 | Command | Purpose |
 |---------|---------|
-| `make serve` | Regenerate lesson pages and start local preview |
-| `make build` | Regenerate and run a strict production build |
-| `make docs` | Regenerate `docs/` only |
+| `make serve` | Generate pages and start local preview |
+| `make build` | Generate pages and run a production build |
+| `make prepare` | Regenerate `index.md` and `module-*.md` only |
 
 ### Pull requests
 

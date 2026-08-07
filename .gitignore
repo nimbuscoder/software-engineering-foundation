@@ -10,7 +10,7 @@ Desktop.ini
 *~
 .vscode/
 
-# Python (if tooling is added later)
+# Python
 __pycache__/
 *.py[cod]
 .venv/
@@ -18,15 +18,24 @@ venv/
 .env
 .env.*
 
-# Static site generators (e.g. GitHub Pages, MkDocs, Jekyll)
+# Jekyll
 _site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+vendor/
+
+# Generated Jekyll pages (built from source markdown)
+index.md
+module-*.md
+
+# Legacy MkDocs output
 site/
 .cache/
-
-# MkDocs — lesson pages are generated; static assets in docs/ are kept
 docs/module-*/
 docs/index.md
 docs/.pages
 
-# Node (if tooling is added later)
+# Node
 node_modules/

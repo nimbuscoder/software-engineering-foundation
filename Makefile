@@ -1,13 +1,10 @@
-.PHONY: docs build serve deploy
+.PHONY: prepare serve build
 
-docs:
-	python scripts/split_for_mkdocs.py
+prepare:
+	python scripts/prepare_jekyll.py
 
-build: docs
-	mkdocs build --strict
+serve: prepare
+	bundle exec jekyll serve --livereload
 
-serve: docs
-	mkdocs serve
-
-deploy: docs
-	mkdocs gh-deploy --force
+build: prepare
+	bundle exec jekyll build
