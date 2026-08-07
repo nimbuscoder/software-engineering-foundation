@@ -2,162 +2,195 @@
 
 ## Module Overview
 
-This module introduces fundamental ideas that remain useful no matter how software is produced. The focus is on structure, efficiency, communication between parts of a system, and the basic organisation of data. These concepts help you write better specifications and examine generated solutions with greater insight.
+This module helps you understand how to organise information, why some ways of doing things take more work than others, and how different parts of a system can work together.  
+
+The ideas start from everyday situations you can easily picture. Only after you have tried the concrete activity do we give the idea a clear name.  
 
 **Estimated total time:** 5–7 hours
 
 **Core objectives:**
-- Recognise common ways of organising information and when each is appropriate.
-- Understand the basic idea of efficiency (why some solutions take more steps than others).
-- Explain simple principles of how independent parts of a system can work together.
-- Apply these ideas when writing specifications and examining results.
+- Organise information in different ways and notice when each way is useful.
+- See that two correct solutions can take different amounts of work.
+- Make clear agreements between different parts of a system.
+- Describe the information a small system needs to remember.
+- Apply these ideas when writing descriptions and checking results.
 
 ---
 
-## Lesson 3.1 – Organising Information: Lists and Ordered Collections
+## Lesson 3.1 – Keeping Things in Order (Lists)
 
 **Duration:** 30–40 minutes
 
-**Goal:** Understand when information should be kept in an ordered sequence and how that organisation affects behaviour.
+**Goal:** Learn when it is useful to keep items in a fixed order and how that order affects what you can do.
 
 **Expected outcomes (checklist)**  
 By the end of this lesson you should be able to:
-- [ ] Write a precise description of a small task that needs items kept in order.
-- [ ] Implement the task using a list in Python.
-- [ ] Add, remove, and retrieve items by position.
-- [ ] Examine what happens when you try to retrieve an item that does not exist.
-- [ ] Explain why order matters for the task and when a different organisation might be better.
+- [ ] Choose a simple situation that needs items kept in order.
+- [ ] Write a clear description of what the ordered list should do.
+- [ ] Create and use a list in Python (add, remove, and look at items by position).
+- [ ] Check what happens when you ask for a position that does not exist.
+- [ ] Explain when keeping order is helpful and when it might cause problems.
+
+**Everyday starting point**  
+Imagine you are packing a school bag. The order of items can matter (books at the bottom, lunch on top). Or imagine a queue of people waiting for food — the first person in line should be served first.
 
 **Activity:**
-1. Write a precise description of a small task that requires keeping several items in order (example: a list of three tasks for the afternoon, or the scores of three players).
-2. Implement the task using a list in Python.
-3. Perform simple operations: add an item, remove an item, and retrieve an item by position.
-4. Examine what happens when you try to retrieve an item that does not exist.
-5. In your notebook, explain why order matters for this particular task and under what conditions a different organisation might be better.
+1. Choose a simple real situation that needs items kept in order (for example: three tasks you must do this afternoon in a certain order, or the scores of three players in a game).
+2. Write a clear description of what the ordered collection should do.
+3. Create a list in Python and practise:
+   - Adding an item
+   - Removing an item
+   - Looking at an item by its position (first, second, third…)
+4. Try to look at a position that does not exist. Write down what happens.
+5. In your notebook, answer: When is keeping a fixed order useful? When could relying only on position cause a problem?
 
 **Reflection:**
-- Why is an ordered collection useful?
-- Under what conditions would relying on position (the place of an item) become unreliable?
+- Why does the position of an item matter in some situations?
+- What can go wrong if the order gets mixed up?
 
-**Principle focus:** Precise description; examining behaviour; identifying failure conditions.
+**Principle focus:** Writing a clear description first; examining what happens when something goes wrong.
 
 ---
 
-## Lesson 3.2 – Organising Information by Name (Maps / Dictionaries)
+## Lesson 3.2 – Finding Things by Name (Dictionaries)
 
 **Duration:** 30–40 minutes
 
-**Goal:** Understand the value of associating information with clear names rather than positions.
+**Goal:** Learn a different way to organise information — by giving each piece a clear name instead of a position number.
 
 **Expected outcomes (checklist)**  
 By the end of this lesson you should be able to:
-- [ ] Write a precise description of a task that requires looking up information by a name or label.
-- [ ] Implement the task using a dictionary.
-- [ ] Retrieve values, add a new entry, and attempt to retrieve a name that does not exist.
-- [ ] Compare this approach with the ordered list from the previous lesson.
-- [ ] State when using the wrong kind of organisation would make a program harder to understand or more likely to fail.
+- [ ] Choose a situation where looking up information by a name is more useful than by position.
+- [ ] Write a clear description of what the named collection should do.
+- [ ] Create and use a dictionary in Python (add, retrieve, and handle a missing name).
+- [ ] Compare this way of organising with the ordered list from the previous lesson.
+- [ ] Explain when using the wrong organisation would make things harder or more error-prone.
+
+**Everyday starting point**  
+Think about a contacts list on a phone. You do not look for “the third person.” You look for “Alex” or “Mum.” The name is the key that lets you find the information quickly.
 
 **Activity:**
-1. Write a precise description of a task that requires looking up information by a name or label (example: storing the ages of three friends and retrieving one friend’s age by name).
-2. Implement the task using a dictionary.
-3. Retrieve values, add a new entry, and attempt to retrieve a name that does not exist.
-4. Compare this approach with the ordered list from the previous lesson. Write a short note on the advantages of each for different situations.
-5. Ask: When would using the wrong kind of organisation make a program harder to understand or more likely to fail?
+1. Choose a simple situation where you need to look up information by a name or label (for example: the ages of three friends, or the number of points each player has).
+2. Write a clear description of what this named collection should do.
+3. Create a dictionary in Python and practise:
+   - Adding a new name and value
+   - Looking up a value by its name
+   - Trying to look up a name that does not exist
+4. Compare this approach with the ordered list from Lesson 3.1. Write a short note: When is each way better?
+5. Ask yourself: What problems could appear if you used a list when a named collection would be clearer, or the other way around?
 
 **Reflection:**
-- Why does looking up information by a clear name often reduce mistakes?
-- Under what conditions might a dictionary become difficult to manage?
+- Why does looking things up by a clear name often reduce mistakes?
+- When might a named collection become hard to manage?
 
-**Principle focus:** Understanding purpose of structure; trade-offs; examining alternatives.
+**Principle focus:** Understanding the purpose of different structures; examining alternatives; noticing trade-offs.
 
 ---
 
-## Lesson 3.3 – The Idea of Efficiency
+## Lesson 3.3 – Some Ways Take More Work (Efficiency)
 
 **Duration:** 30–40 minutes
 
-**Goal:** Develop an initial sense that different correct solutions can require different amounts of work from the computer.
+**Goal:** Notice that two correct solutions can still be different in how much work they make the computer do.
 
 **Expected outcomes (checklist)**  
 By the end of this lesson you should be able to:
-- [ ] Write a precise description of a task that can be solved in more than one way.
-- [ ] Implement two different solutions.
-- [ ] Count, in rough terms, how many comparisons or steps each solution performs.
-- [ ] Explain why one solution might be preferable even though both produce the correct answer.
-- [ ] Consider how the difference in steps would grow with a larger version of the problem.
+- [ ] Write a clear description of a small task that can be solved in more than one way.
+- [ ] Create two different solutions that both give the correct answer.
+- [ ] Roughly count the steps or comparisons each solution needs.
+- [ ] Explain why one solution might be better even though both are correct.
+- [ ] Think about what happens when the problem becomes larger.
+
+**Everyday starting point**  
+Imagine you need to find the tallest person in a group of five friends. You could compare them one by one in different orders. Both ways can give the right answer, but one way might need more comparisons than the other.
 
 **Activity:**
-1. Write a precise description of a task that can be solved in more than one way (example: find the largest number among five numbers).
-2. Implement two different solutions.
-3. Count, in rough terms, how many comparisons or steps each solution performs.
-4. In your notebook, explain why one solution might be preferable even though both produce the correct answer.
-5. Consider a larger version of the same problem (twenty numbers instead of five). Ask how the difference in steps would grow.
+1. Write a clear description of a small task that can be solved in more than one way (example: find the largest number among five numbers).
+2. Create two different solutions in Python that both produce the correct answer.
+3. Roughly count how many comparisons or steps each solution performs.
+4. In your notebook, explain why one solution might be preferable even though both are correct.
+5. Imagine the same problem with twenty numbers instead of five. How would the difference in steps change?
 
 **Reflection:**
 - Why does the number of steps matter?
-- Under what conditions would a slower but clearer solution still be acceptable?
+- When might a slower but clearer solution still be a good choice?
 
-**Principle focus:** Understanding trade-offs; examining solutions beyond mere correctness; asking about real constraints.
+**Principle focus:** Looking beyond simple correctness; examining trade-offs; asking about real constraints.
 
 ---
 
-## Lesson 3.4 – Interfaces as Agreements Between Parts
+## Lesson 3.4 – Clear Agreements Between Parts (Interfaces)
 
 **Duration:** 30–40 minutes
 
-**Goal:** Introduce the idea that separate parts of a system can work together only if they share a clear agreement about how they communicate.
+**Goal:** Learn that different parts of a system can work together only when they share a clear agreement about how they communicate.
 
 **Expected outcomes (checklist)**  
 By the end of this lesson you should be able to:
-- [ ] Write a precise description of the agreement (interface) between two parts of a system.
-- [ ] Implement the two parts as separate functions that follow the agreement.
-- [ ] Deliberately break the agreement in one part and observe the result.
-- [ ] Restore the agreement and confirm correct behaviour.
-- [ ] Explain why a clear interface makes it easier to examine or replace one part without damaging the other.
+- [ ] Describe a simple system that has two distinct parts.
+- [ ] Write a clear agreement (what information is passed, in what form, and what each part can expect).
+- [ ] Build the two parts so they follow the agreement.
+- [ ] Break the agreement on purpose and observe what happens.
+- [ ] Restore the agreement and confirm that the system works again.
+- [ ] Explain why a clear agreement makes it easier to check or change one part without breaking the other.
+
+**Everyday starting point**  
+Think about ordering food at a counter. You tell the cashier what you want (the agreement). The cashier tells the kitchen. If you speak unclearly or the cashier passes the wrong message, the order fails. The agreement between you and the cashier (and between the cashier and the kitchen) must be clear.
 
 **Activity:**
-1. Imagine two simple parts of a system: one part that collects a number from a user, and another part that doubles that number and displays the result.
-2. Write a precise description of the agreement (the interface) between the two parts: what information is passed, in what form, and what each part can expect.
-3. Implement the two parts as separate functions that follow the agreement.
+1. Imagine a small system with two parts:
+   - Part A collects a number from the user.
+   - Part B doubles that number and shows the result.
+2. Write a clear agreement between the two parts:
+   - What information is passed?
+   - In what form?
+   - What can each part expect from the other?
+   - What should happen if the agreement is broken?
+3. Build the two parts as separate functions that follow the agreement.
 4. Deliberately break the agreement in one part and observe the result.
-5. Restore the agreement and confirm correct behaviour.
-6. In your notebook, explain why a clear interface makes it easier to examine or replace one part without damaging the other.
+5. Fix the agreement and confirm the system works correctly again.
+6. In your notebook, explain why a clear agreement makes it easier to examine or change one part without damaging the other.
 
 **Reflection:**
 - Why is an explicit agreement between parts valuable?
-- Under what conditions would a vague interface cause problems later?
+- What problems can appear later if the agreement is vague?
 
-**Principle focus:** Precise description of interactions; examining the consequences of broken agreements; systems thinking.
+**Principle focus:** Writing precise descriptions of how parts interact; examining what happens when agreements are broken; systems thinking.
 
 ---
 
-## Lesson 3.5 – Simple Data Modelling
+## Lesson 3.5 – Describing the Information a System Needs
 
 **Duration:** 30–40 minutes
 
-**Goal:** Practise describing the information a system needs to remember and how the pieces of information relate to one another.
+**Goal:** Practise describing clearly what information a small system must remember and how the pieces of information relate to each other.
 
 **Expected outcomes (checklist)**  
 By the end of this lesson you should be able to:
-- [ ] Choose a small real-world situation and write a precise description of the information that must be stored.
-- [ ] Decide on suitable structures (lists, dictionaries, or combinations) to represent that information.
-- [ ] Implement a minimal version that can store and retrieve the information.
+- [ ] Choose a small real situation and write a clear description of the information it needs to store.
+- [ ] Decide on simple structures (lists, dictionaries, or a combination) to hold that information.
+- [ ] Build a minimal version that can store and retrieve the information.
 - [ ] Test with normal data and with missing or unexpected data.
-- [ ] Revise the original description if testing shows that important information was omitted.
+- [ ] Improve the original description if testing shows that something important was missing.
+
+**Everyday starting point**  
+Imagine a simple classroom library. You need to remember which books exist, who has borrowed them, and when they are due. If you forget to record one of these pieces, the system cannot answer basic questions.
 
 **Activity:**
 1. Choose a small real-world situation (example: tracking books borrowed from a classroom library, or recording scores for a simple game).
-2. Write a precise description of the information that must be stored and the relationships between the pieces of information.
-3. Decide on suitable structures (lists, dictionaries, or combinations) to represent that information.
-4. Implement a minimal version that can store and retrieve the information.
+2. Write a clear description of:
+   - The information that must be stored
+   - How the pieces of information relate to each other
+3. Decide on suitable structures (lists, dictionaries, or a combination).
+4. Build a minimal version that can store and retrieve the information.
 5. Test with normal data and with missing or unexpected data.
-6. Revise the original description if testing reveals that important information was omitted.
+6. Revise the original description if testing reveals that important information was left out.
 
 **Reflection:**
 - Why does thinking carefully about the information first lead to better systems?
-- Under what conditions would an incomplete model of the data cause the system to fail?
+- What can go wrong if the description of the data is incomplete?
 
-**Principle focus:** Precise problem formulation; examining completeness; identifying missing constraints.
+**Principle focus:** Precise problem formulation; examining completeness; noticing missing pieces.
 
 ---
 
@@ -165,44 +198,46 @@ By the end of this lesson you should be able to:
 
 **Duration:** 45–60 minutes
 
-**Goal:** Combine organisation of data, efficiency awareness, and clear interfaces in a constrained project.
+**Goal:** Combine organising information, noticing work differences, and making clear agreements inside one small system that has real rules.
 
 **Expected outcomes (checklist)**  
 By the end of this lesson you should be able to:
-- [ ] Define a small system that must store and retrieve information under at least one real constraint.
-- [ ] Write a complete specification that includes purpose, information, actions, constraint, and response to invalid input.
-- [ ] Design the data organisation and the interfaces between the main parts.
-- [ ] Implement the system.
-- [ ] Test thoroughly against the specification, paying special attention to the constraint and invalid inputs.
-- [ ] Record any changes made to the specification after examining the first implementation.
+- [ ] Define a small system that must store and retrieve information under at least one real rule (constraint).
+- [ ] Write a complete description that includes purpose, information needed, actions, the rule that must never be broken, and what to do with invalid input.
+- [ ] Design how the information is organised and the agreements between the main parts.
+- [ ] Build the system.
+- [ ] Test it carefully against the description, especially the rule and invalid inputs.
+- [ ] Record any changes you made to the description after testing the first version.
+
+**Project brief**  
+Create a simple tracker for a limited set of items (for example: classroom supplies, personal books, or points in a game). The system must enforce at least one clear rule (examples: quantity cannot become negative, a maximum value cannot be exceeded, or certain items cannot be removed once added).
 
 **Activity:**
-1. Define a small system that must store and retrieve information under at least one real constraint (example: a simple inventory of five items that must not allow negative quantities, or a list of tasks that must keep track of whether each task is finished).
-2. Write a complete specification that includes:
-   - The purpose of the system.
-   - The information it must remember.
-   - The actions a user can perform.
-   - At least one constraint that must never be violated.
-   - How the system should respond when given invalid input.
-3. Design the data organisation and the interfaces between the main parts.
-4. Implement the system.
-5. Test thoroughly against the specification, paying special attention to the constraint and to invalid inputs.
-6. Record any changes you made to the specification after examining the first implementation.
+1. Write a complete description that includes:
+   - The purpose of the system
+   - The information it must remember
+   - The actions a user can perform
+   - At least one rule that must never be broken
+   - How the system should respond when given invalid input
+2. Design how the information will be organised and the agreements between the main parts.
+3. Build the system.
+4. Test it thoroughly against the description, paying special attention to the rule and to invalid inputs.
+5. Record any changes you made to the description after examining the first version.
 
 **Reflection:**
-- Which part of the specification proved most important during testing?
-- What trade-off did you have to consider (for example, simplicity versus strict enforcement of a constraint)?
+- Which part of the description proved most important during testing?
+- What trade-off did you have to consider (for example, simplicity versus strict enforcement of a rule)?
 
-**Principle focus:** All guiding principles applied in a single project.
+**Principle focus:** All guiding principles applied together in one small system.
 
 ---
 
 ## Module 03 Completion Check
 
 Before moving to Module 04, confirm that you can:
-- Choose appropriate ways to organise information for a given task.
-- Explain in simple terms why one correct solution may be preferable to another.
-- Describe a clear interface between two parts of a system.
-- Write a data description that includes necessary relationships and constraints.
+- Organise information using both ordered lists and named collections, and explain when each is useful.
+- Notice that two correct solutions can still differ in the amount of work they require.
+- Write a clear agreement between two parts of a system and test what happens when the agreement is broken.
+- Describe the information a small system needs and improve that description after testing.
 
-Record a short reflection on how the ideas in this module change the way you write specifications.
+Record a short reflection on how the ideas in this module change the way you write descriptions of systems.

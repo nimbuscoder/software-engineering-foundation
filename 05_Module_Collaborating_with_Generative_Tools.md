@@ -2,47 +2,75 @@
 
 ## Module Overview
 
-This module develops the practical habits required to work effectively with systems that generate solutions from descriptions. You will learn to provide precise instructions, to request useful intermediate explanations, to examine outputs critically, and to iterate on constraints when the first result is unsatisfactory. The generative tool is treated as a powerful but imperfect collaborator.
+This module teaches you how to work with computer systems that can generate solutions from your descriptions. You will learn to write clear requests, examine the results carefully, improve your requests when needed, and decide when a generated solution is good enough or still has problems.
+
+The ideas start from everyday situations. Short code examples are included to make the ideas clearer.
 
 **Estimated total time:** 4–6 hours
 
 **Core objectives:**
-- Formulate clear and complete requests for a generative system.
-- Examine generated solutions against the original specification without accepting them uncritically.
-- Improve results by refining constraints and descriptions rather than by manual rewriting of every detail.
-- Maintain independent judgement while using generative assistance.
+- Write clear and complete requests for a generative system.
+- Examine generated solutions against the original description without accepting them quickly.
+- Improve results by refining the description and rules rather than fixing every detail by hand.
+- Keep your own judgement while using generative help.
 
 ---
 
-## Lesson 5.1 – Preparing a High-Quality Request
+## Lesson 5.1 – Preparing a Clear Request
 
 **Duration:** 25–35 minutes
 
-**Goal:** Practise turning a specification into a request that gives a generative system the best chance of producing a useful result.
+**Goal:** Practise turning a clear description into a request that gives a generative system the best chance of producing a useful result.
 
 **Expected outcomes (checklist)**  
 By the end of this lesson you should be able to:
-- [ ] Rewrite a specification as a clear request addressed to a generative assistant.
-- [ ] Include purpose, required behaviour, explicit constraints, handling of invalid input, and a request for a brief explanation of the approach.
-- [ ] Compare the original specification with the request and confirm that no important detail has been lost.
-- [ ] Keep the focus on the quality of the prepared text (do not send the request yet).
+- [ ] Take a clear description and rewrite it as a request to a generative assistant.
+- [ ] Include the purpose, required behaviour, rules, handling of invalid input, and a request for a short explanation.
+- [ ] Compare the original description with the request and confirm that no important detail is missing.
+- [ ] Focus on the quality of the request (do not send it yet).
+
+**Everyday starting point**  
+Imagine you ask a helpful older student to build a simple tool for you. If you give vague instructions, you will probably get something that does not match what you wanted. The clearer your request, the better the result usually is.
+
+**Concrete example of a good request**  
+Using the temperature advisor from Module 04:
+
+```
+Please create a simple Python program with these requirements:
+
+Purpose: Give short clothing advice based on a temperature in Celsius.
+
+Input: A whole number representing degrees Celsius.
+
+Rules:
+- The temperature must be between -20 and 50 inclusive.
+- If the input is not a whole number or is outside the range, show a clear error message.
+- Do not give clothing advice for invalid temperatures.
+
+Expected behaviour examples:
+- When the input is 28, say “It is warm. Wear light clothes.”
+- When the input is 12, say “It is cool. Wear a jacket.”
+- When the input is 51, say “Temperature out of range. Please enter a number between -20 and 50.”
+
+Please also give a short explanation of how your solution works.
+```
 
 **Activity:**
-1. Take a short, complete specification written in an earlier module.
-2. Rewrite the specification as a clear request addressed to a generative assistant. Include:
-   - The purpose of the system.
-   - The required behaviour.
-   - Explicit constraints.
-   - Expected handling of invalid input.
-   - A request for the assistant to explain its approach briefly.
-3. Compare the original specification with the request. Ensure that no important detail has been lost.
-4. Do not yet send the request. Focus on the quality of the prepared text.
+1. Take a short, complete description you wrote in an earlier module (or create a new simple one).
+2. Rewrite it as a clear request to a generative assistant. Include:
+   - The purpose of the system
+   - The required behaviour
+   - Explicit rules
+   - How invalid input should be handled
+   - A request for a short explanation of the approach
+3. Compare the original description with the request. Make sure no important detail has been lost.
+4. Do not send the request yet. Focus only on the quality of the prepared text.
 
 **Reflection:**
 - Why does the quality of the request strongly influence the quality of the generated result?
 - What details are most important to include?
 
-**Principle focus:** Precise description before asking for an implementation.
+**Principle focus:** Writing a precise description before asking for an implementation.
 
 ---
 
@@ -50,23 +78,43 @@ By the end of this lesson you should be able to:
 
 **Duration:** 35–45 minutes
 
-**Goal:** Develop a disciplined process for inspecting a generated solution rather than assuming it is correct.
+**Goal:** Develop a careful habit of inspecting a generated solution instead of assuming it is correct.
 
 **Expected outcomes (checklist)**  
 By the end of this lesson you should be able to:
 - [ ] Submit a carefully prepared request and obtain a solution.
-- [ ] Read the solution carefully and compare it with the original specification before running it.
-- [ ] List any parts that appear incomplete, unclear, or different from what was requested.
-- [ ] Run the solution and test it against the acceptance criteria and edge cases.
-- [ ] Record every discrepancy and note the most important difference discovered through examination.
+- [ ] Read the solution carefully and compare it with the original description before running it.
+- [ ] List any parts that look incomplete, unclear, or different from what was requested.
+- [ ] Run the solution and test it against the concrete checks and edge cases.
+- [ ] Record every difference and note the most important problem found.
+
+**Everyday starting point**  
+When someone follows your instructions to make a snack, you do not just taste the final result. You check whether they followed each important step, especially the unusual cases. The same careful comparison is needed with solutions generated by a computer.
+
+**Concrete example of examining a result**  
+Suppose the generative system returned this code:
+
+```python
+temperature = int(input("Enter temperature: "))
+
+if temperature > 25:
+    print("It is warm. Wear light clothes.")
+else:
+    print("It is cool. Wear a jacket.")
+```
+
+Problems you should notice:
+- It crashes if the user types text instead of a number.
+- It does not check the range –20 to 50.
+- It does not match the error messages required in the description.
 
 **Activity:**
 1. Submit a carefully prepared request to a generative assistant and obtain a solution.
-2. Without running the solution yet, read it carefully and compare it with the original specification.
+2. Without running the solution yet, read it carefully and compare it with the original description.
 3. List any parts that appear incomplete, unclear, or different from what was requested.
-4. Run the solution and test it against the acceptance criteria and edge cases.
+4. Run the solution and test it against the concrete checks and edge cases.
 5. Record every discrepancy between the requested behaviour and the observed behaviour.
-6. Write a short note on the most important difference you discovered through examination.
+6. Write a short note on the most important difference you discovered.
 
 **Reflection:**
 - What did careful examination reveal that a quick glance would have missed?
@@ -76,23 +124,36 @@ By the end of this lesson you should be able to:
 
 ---
 
-## Lesson 5.3 – Iterating Through Improved Constraints
+## Lesson 5.3 – Improving the Request and Trying Again
 
 **Duration:** 35–45 minutes
 
-**Goal:** Learn to improve a result by refining the description and constraints rather than by discarding the generative process.
+**Goal:** Learn to improve a result by refining the description and rules rather than fixing every small detail by hand.
 
 **Expected outcomes (checklist)**  
 By the end of this lesson you should be able to:
-- [ ] Identify the precise reason for each failure in a generated solution.
-- [ ] Write an improved request that adds or clarifies the necessary constraints and examples.
+- [ ] Identify the exact reason for each failure in a generated solution.
+- [ ] Write an improved request that adds or clarifies the necessary rules and examples.
 - [ ] Obtain a new solution and examine it with the same care.
-- [ ] Document how the successive refinements improved the result.
+- [ ] Document how the successive improvements changed the result.
+
+**Everyday starting point**  
+If the first version of a snack is too salty, you do not throw everything away and start from nothing. You adjust the instructions (“use less salt”) and try again. The same idea works with generative tools: improve the request and generate again.
+
+**Concrete example of an improved request**  
+After seeing the problems in the previous example, an improved request could add:
+
+```
+Important rules that must be followed:
+- First check that the input can be turned into a whole number. If not, print “Please enter a whole number.” and stop.
+- Then check that the number is between -20 and 50. If not, print “Temperature out of range...” and stop.
+- Only give clothing advice when the temperature is valid.
+```
 
 **Activity:**
-1. Take a generated solution that failed one or more acceptance criteria.
+1. Take a generated solution that failed one or more concrete checks.
 2. Identify the precise reason for each failure.
-3. Write an improved request that adds or clarifies the necessary constraints and examples.
+3. Write an improved request that adds or clarifies the necessary rules and examples.
 4. Obtain a new solution.
 5. Examine the new solution with the same care as before.
 6. Repeat the cycle once more if needed.
@@ -102,34 +163,42 @@ By the end of this lesson you should be able to:
 - Why is refining the request often more effective than trying to repair every detail by hand?
 - Under what conditions would further iteration still be necessary?
 
-**Principle focus:** Practising precise description; examining each new result; understanding the effect of constraints.
+**Principle focus:** Practising precise description; examining each new result; understanding the effect of rules.
 
 ---
 
-## Lesson 5.4 – Requesting Explanations and Alternatives
+## Lesson 5.4 – Asking for Explanations and Alternatives
 
 **Duration:** 30–40 minutes
 
-**Goal:** Use the generative system not only to produce a solution but also to gain insight into its reasoning and to explore alternatives.
+**Goal:** Use the generative system not only to produce a solution but also to gain insight into its reasoning and to explore other possibilities.
 
 **Expected outcomes (checklist)**  
 By the end of this lesson you should be able to:
 - [ ] Ask the generative assistant to explain the main decisions it made.
-- [ ] Request at least one alternative approach that satisfies the same specification.
-- [ ] Compare the original solution and the alternative against the specification and against efficiency or clarity.
+- [ ] Request at least one alternative approach that still satisfies the same description.
+- [ ] Compare the original solution and the alternative against the description and against clarity or simplicity.
 - [ ] Decide which version better meets the stated goals and explain why.
 - [ ] Note any new understanding gained from the explanation.
 
+**Everyday starting point**  
+After someone builds a tool for you, it is useful to ask “Why did you build it this way?” and “Is there another way that might be simpler?” Understanding the reasons helps you judge the quality of the solution.
+
+**Concrete example of useful questions**  
+- “Please explain the main steps your solution follows.”
+- “Can you show a different way to solve the same problem that still follows all the rules?”
+- “Which version do you think is clearer for a beginner, and why?”
+
 **Activity:**
 1. After obtaining a working solution, ask the generative assistant to explain the main decisions it made.
-2. Request at least one alternative approach that satisfies the same specification.
-3. Compare the original solution and the alternative against the specification and against the idea of efficiency or clarity.
+2. Request at least one alternative approach that satisfies the same description.
+3. Compare the original solution and the alternative against the description and against clarity or simplicity.
 4. Decide which version better meets the stated goals and explain why in your notebook.
 5. Note any new understanding you gained from the explanation.
 
 **Reflection:**
-- How does requesting an explanation support the habit of asking “why does this work?”
-- When is it useful to examine an alternative solution even if the first one already meets the criteria?
+- How does asking for an explanation support the habit of asking “why does this work?”
+- When is it useful to examine an alternative solution even if the first one already meets the checks?
 
 **Principle focus:** Maintaining the habit of asking why; examining alternatives; understanding trade-offs.
 
@@ -143,18 +212,24 @@ By the end of this lesson you should be able to:
 
 **Expected outcomes (checklist)**  
 By the end of this lesson you should be able to:
-- [ ] Identify a limitation in a generated solution that appears to work for normal cases but fails a constraint or edge case.
-- [ ] Write a short analysis covering what the solution does correctly, what it fails to do, the source of the failure, and what additional information or constraint would be required.
-- [ ] Decide whether to continue iterating or to treat the current result as insufficient.
+- [ ] Identify a limitation in a generated solution that appears to work for normal cases but fails a rule or edge case.
+- [ ] Write a short analysis covering what the solution does correctly, what it fails to do, the likely source of the failure, and what extra information would be needed.
+- [ ] Decide whether to continue improving the request or to treat the current result as insufficient.
+
+**Everyday starting point**  
+Sometimes a helper produces something that looks almost right but still breaks an important rule. Recognising these limits is part of using help wisely instead of trusting everything automatically.
+
+**Concrete example of a limitation**  
+A generated solution might correctly handle temperatures 12 and 28, but still crash when the user types a word, or still give advice when the temperature is 60. These are limits that must be noticed and addressed.
 
 **Activity:**
-1. Create or obtain a generated solution that appears to work for normal cases but violates a constraint or fails an edge case.
+1. Create or obtain a generated solution that appears to work for normal cases but violates a rule or fails an edge case.
 2. Identify the limitation clearly.
 3. Write a short analysis that answers:
-   - What the solution does correctly.
-   - What it fails to do.
-   - Whether the failure comes from an incomplete request or from a limitation of the generative process.
-   - What additional information or constraint would be required to address the failure.
+   - What the solution does correctly
+   - What it fails to do
+   - Whether the failure comes from an incomplete request or from a limitation of the generative process
+   - What additional information or rule would be required to address the failure
 4. Decide whether to continue iterating or to treat the current result as insufficient.
 
 **Reflection:**
@@ -165,26 +240,32 @@ By the end of this lesson you should be able to:
 
 ---
 
-## Lesson 5.6 – Mini Project: Directed Generation under Constraints
+## Lesson 5.6 – Mini Project: Directed Generation under Rules
 
 **Duration:** 50–70 minutes
 
-**Goal:** Apply the full cycle of precise request, generation, examination, and refinement to a small system that includes meaningful constraints.
+**Goal:** Apply the full cycle of clear request, generation, examination, and refinement to a small system that includes meaningful rules.
 
 **Expected outcomes (checklist)**  
 By the end of this lesson you should be able to:
-- [ ] Write a complete specification for a small tool that enforces at least two real constraints.
-- [ ] Prepare a high-quality request from the specification.
-- [ ] Obtain a generated solution and examine it systematically against every acceptance criterion and constraint.
+- [ ] Write a complete description for a small tool that enforces at least two real rules.
+- [ ] Prepare a high-quality request from the description.
+- [ ] Obtain a generated solution and examine it systematically against every concrete check and rule.
 - [ ] Refine the request at least once and obtain an improved solution.
 - [ ] Produce a final evaluation that states whether the solution is acceptable and why.
 - [ ] Record the most valuable improvement that came from examination and iteration.
 
+**Project brief**  
+Create a small tool that enforces at least two real rules. Suitable examples:
+- A simple scoring system with maximum values
+- A converter that rejects impossible inputs
+- A tracker that never allows negative quantities
+
 **Activity:**
-1. Write a complete specification for a small tool that enforces at least two real constraints (examples: a simple scoring system with maximum values, a converter that rejects impossible inputs, or a tracker that never allows negative quantities).
-2. Prepare a high-quality request from the specification.
+1. Write a complete description for a small tool that enforces at least two real rules.
+2. Prepare a high-quality request from the description.
 3. Obtain a generated solution.
-4. Examine it systematically against every acceptance criterion and constraint.
+4. Examine it systematically against every concrete check and rule.
 5. Refine the request at least once and obtain an improved solution.
 6. Produce a final evaluation that states whether the solution is acceptable and why.
 7. Record the most valuable improvement that came from examination and iteration.
@@ -200,9 +281,9 @@ By the end of this lesson you should be able to:
 ## Module 05 Completion Check
 
 Before moving to Module 06, confirm that you can:
-- Prepare a clear and complete request from a specification.
-- Examine a generated solution systematically against requirements and constraints.
-- Improve results by refining descriptions and constraints.
+- Prepare a clear and complete request from a description.
+- Examine a generated solution systematically against requirements and rules.
+- Improve results by refining descriptions and rules.
 - Recognise and articulate the limits of a generated solution.
 
-Record a short reflection on the difference between accepting a generated solution and examining it.
+Record a short reflection on the difference between accepting a generated solution and examining it carefully.
