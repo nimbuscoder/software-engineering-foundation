@@ -45,9 +45,9 @@ By completing this syllabus, the student will be able to:
 
 ### Recommended Tools
 
-- A free online Python environment (an online code editor that requires no installation).
-- A simple text editor or notebook for writing precise descriptions and reflections.
-- Access to a generative AI assistant (use it only after writing a clear specification, and always examine the output carefully).
+- **[Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro)** — a free online Python environment; no installation required
+- A simple text editor or notebook for writing precise descriptions and reflections
+- Access to a generative AI assistant (use it only after writing a clear specification, and always examine the output carefully)
 
 ### Structure of the Syllabus
 
