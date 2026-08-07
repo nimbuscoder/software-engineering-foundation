@@ -8,7 +8,6 @@ Students begin with a clear, rigid structure. This structure reduces ambiguity a
 
 The same habits trained here—precise purpose, explicit rules, concrete examples, constraints, and verification—apply whether the student is requesting code, a requirements document, an explanation, or a design rationale.
 
-**Python playground:** Use the [Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro) to try code examples from this module.
 
 **Estimated total time:** 4–6 hours
 

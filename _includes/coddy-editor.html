@@ -1,0 +1,18 @@
+{% assign coddy_code = include.encoded_code | default: "" %}
+{% assign coddy_stdin = include.encoded_stdin | default: "" %}
+{% assign coddy_theme = include.theme | default: "light" %}
+{% assign coddy_height = include.height | default: "480" %}
+{% capture coddy_src -%}
+https://coddy.tech/embed-editor?lang=python&theme={{ coddy_theme }}&code={{ coddy_code }}&credit=0{%- if coddy_stdin != "" -%}&stdin={{ coddy_stdin }}{%- endif -%}
+{%- endcapture %}
+<figure class="coddy-embed">
+  <iframe
+    src="{{ coddy_src | strip }}"
+    width="100%"
+    height="{{ coddy_height }}"
+    title="Python code editor by Coddy"
+    loading="lazy"></iframe>
+  <figcaption dir="ltr">
+    Powered by <a href="https://coddy.tech/embed" target="_blank" rel="noopener noreferrer">Coddy</a>
+  </figcaption>
+</figure>

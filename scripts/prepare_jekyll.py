@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import base64
 import re
 import shutil
 from pathlib import Path
@@ -62,6 +63,46 @@ MODULES = [
 ]
 
 MODULE_MENU_LABELS = {number: menu_label for number, *_rest, menu_label in MODULES}
+
+MODULE_PLAYGROUND_CODE = {
+    "01": (
+        "# Try code from this module here\n"
+        "student_age = 12\n"
+        'favourite_subject = "Mathematics"\n'
+        'print("Age:", student_age)\n'
+        'print("Favourite subject:", favourite_subject)\n'
+    ),
+    "02": (
+        "# Explore how Python runs your instructions\n"
+        'message = "Hello from Python"\n'
+        "print(message)\n"
+    ),
+    "03": (
+        "# Experiment with data structures\n"
+        "scores = [85, 92, 78]\n"
+        'print("Scores:", scores)\n'
+        'print("Average:", sum(scores) / len(scores))\n'
+    ),
+    "04": (
+        "temperature = 28\n\n"
+        "if temperature > 25:\n"
+        '    print("It is warm. Wear light clothes.")\n'
+        "else:\n"
+        '    print("It is cool. Wear a jacket.")\n'
+    ),
+    "05": (
+        "# Test small Python snippets while designing structured requests\n"
+        'print("Ready to experiment.")\n'
+    ),
+    "06": (
+        "# Sketch and test project ideas here\n"
+        'print("Project workspace ready.")\n'
+    ),
+    "07": (
+        "# Optional: try small examples that support your analysis\n"
+        'print("Ready to explore.")\n'
+    ),
+}
 
 NAVIGATION_DATA = ROOT / "_data" / "navigation.yml"
 
@@ -214,9 +255,53 @@ def write_page(path: Path, front_matter: dict[str, str], body: str) -> None:
     path.write_text("\n".join(fm_lines) + "\n\n" + body.strip() + "\n", encoding="utf-8")
 
 
-PLAYGROUND_LINK = re.compile(
-    r"\[([^\]]+)\]\((https://www\.onlineide\.pro[^\)]+)\)(?:\{[^\}]+\})?"
+PLAYGROUND_LINE = re.compile(
+    r"\*\*Python playground:\*\* Use the \[Online IDE Pro[^\]]+\]\([^\)]+\)[^\n]*\n?"
 )
+
+PYTHON_FENCE = re.compile(r"```python\n(.*?)```", re.DOTALL)
+
+
+def coddy_b64(text: str) -> str:
+    return base64.b64encode(text.encode("utf-8")).decode("ascii")
+
+
+def coddy_embed(code: str, stdin: str = "") -> str:
+    encoded_code = coddy_b64(code)
+    if stdin:
+        encoded_stdin = coddy_b64(stdin)
+        return (
+            f'{{% include coddy-editor.html encoded_code="{encoded_code}" '
+            f'encoded_stdin="{encoded_stdin}" %}}'
+        )
+    return f'{{% include coddy-editor.html encoded_code="{encoded_code}" %}}'
+
+
+def ensure_module_playground(content: str, module_number: str) -> str:
+    content = PLAYGROUND_LINE.sub("", content)
+    if "### Try it yourself" in content:
+        return content
+
+    starter = MODULE_PLAYGROUND_CODE.get(
+        module_number,
+        '# Use this editor to try code from this module.\nprint("Ready.")\n',
+    )
+    embed_section = f"### Try it yourself\n\n{coddy_embed(starter)}\n\n"
+    for marker in ("**Estimated total time:**", "### Core objectives"):
+        if marker in content:
+            return content.replace(marker, embed_section + marker, 1)
+    return f"{content.rstrip()}\n\n{embed_section}"
+
+
+def inject_coddy_after_python_blocks(content: str) -> str:
+    def append_embed(match: re.Match[str]) -> str:
+        code = match.group(1).strip("\n")
+        if not code:
+            return match.group(0)
+        return f"{match.group(0)}\n\n{coddy_embed(code + chr(10))}\n"
+
+    return PYTHON_FENCE.sub(append_embed, content)
+
 
 MODULE_LINK = re.compile(
     r"\[([^\]]+)\]\("
@@ -261,27 +346,12 @@ def rewrite_module_link_text(content: str) -> str:
     return MODULE_LINK.sub(replace, content)
 
 
-def open_external_playground_links(content: str) -> str:
-    """Open Online IDE Pro links in a new tab."""
-
-    def add_attrs(match: re.Match[str]) -> str:
-        text = match.group(1)
-        url = match.group(2)
-        if "target=" in match.group(0):
-            return match.group(0)
-        return (
-            f'[{text}]({url}){{:target="_blank" rel="noopener noreferrer"}}'
-        )
-
-    return PLAYGROUND_LINK.sub(add_attrs, content)
-
-
 def enhance_syllabus(content: str) -> str:
     first_label = MODULE_MENU_LABELS["01"]
     start_banner = f"""
 > **New here?** Start with [{first_label}]({{{{ '/module-01/' | relative_url }}}}) and work through the modules in order.
 >
-> **Try code online:** [Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro)
+> **Try code online:** The [{first_label}]({{{{ '/module-01/' | relative_url }}}}) module includes an in-page Python editor — no setup required.
 """
     if "New here?" not in content:
         content = content.replace(
@@ -289,7 +359,7 @@ def enhance_syllabus(content: str) -> str:
             f"\n{start_banner}\n---\n",
             1,
         )
-    return rewrite_module_link_text(open_external_playground_links(content))
+    return rewrite_module_link_text(content)
 
 
 def tag_expected_outcomes_lists(content: str) -> str:
@@ -318,10 +388,14 @@ def tag_expected_outcomes_lists(content: str) -> str:
     return "\n".join(result)
 
 
-def prepare_section_body(content: str) -> str:
-    return rewrite_module_link_text(
-        open_external_playground_links(tag_expected_outcomes_lists(content))
-    )
+def prepare_section_body(
+    content: str, module_number: str, is_overview: bool = False
+) -> str:
+    content = tag_expected_outcomes_lists(content)
+    if is_overview:
+        content = ensure_module_playground(content, module_number)
+    content = inject_coddy_after_python_blocks(content)
+    return rewrite_module_link_text(content)
 
 
 def clean_generated_pages() -> None:
@@ -370,7 +444,7 @@ def generate_module_pages(
                 "module": number,
                 "section": slug,
             },
-            prepare_section_body(body),
+            prepare_section_body(body, number, slug == "module-overview"),
         )
         page_count += 1
 

@@ -6,8 +6,6 @@ This module establishes the foundational habit of precise, ordered description. 
 
 Python is used because its wording is readable, allowing attention to remain on ideas rather than on complicated rules.
 
-**Python playground:** Use the [Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro) to try code examples from this module.
-
 **Estimated total time:** 4–6 hours (short lessons)
 
 ### Core objectives

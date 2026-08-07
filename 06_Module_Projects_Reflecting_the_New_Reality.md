@@ -6,7 +6,6 @@ This module brings together the skills you have practised so far. You will work 
 
 Each project is designed so that you can complete it using the ideas from earlier modules. The projects increase gradually in complexity.
 
-**Python playground:** Use the [Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro) to try code examples from this module.
 
 **Estimated total time:** 6–9 hours (spread across several sessions)
 

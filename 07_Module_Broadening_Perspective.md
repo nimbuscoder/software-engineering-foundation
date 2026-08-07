@@ -6,7 +6,6 @@ This final module places the technical skills you have practised into a wider co
 
 The ideas start from everyday situations you can relate to.
 
-**Python playground:** Use the [Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro) to try code examples from this module.
 
 **Estimated total time:** 3–5 hours
 
