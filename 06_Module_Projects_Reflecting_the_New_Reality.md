@@ -10,7 +10,7 @@ Each project is designed so that you can complete it using the ideas from earlie
 
 **Estimated total time:** 6–9 hours (spread across several sessions)
 
-**Core objectives:**
+### Core objectives
 - Apply systems thinking to problems that involve real rules and trade-offs.
 - Write complete descriptions before building or generating any solution.
 - When using a generative tool, convert the description into a structured request (Purpose, Rules, Examples, Constraints, Self-check) and examine the result systematically.

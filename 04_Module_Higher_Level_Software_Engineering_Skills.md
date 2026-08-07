@@ -10,7 +10,7 @@ The ideas begin with everyday situations you can picture. Formal names for the i
 
 **Estimated total time:** 5–7 hours
 
-**Core objectives:**
+### Core objectives
 - Write clear descriptions of what a system should do.
 - State rules the system must never break and situations that sit at the edge of normal use.
 - Make clear agreements between different parts of a system.

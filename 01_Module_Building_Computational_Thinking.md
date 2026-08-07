@@ -10,7 +10,7 @@ Python is used because its wording is readable, allowing attention to remain on 
 
 **Estimated total time:** 4–6 hours (short lessons)
 
-**Core objectives:**
+### Core objectives
 - Break everyday tasks into precise, ordered steps that leave no room for guessing.
 - Express simple behaviour using variables, decisions, repetition, and functions.
 - Write a clear description of required behaviour before creating any instructions.

@@ -10,7 +10,7 @@ The ideas start from everyday situations you can relate to.
 
 **Estimated total time:** 3–5 hours
 
-**Core objectives:**
+### Core objectives
 - See how knowledge of a particular subject improves the quality of descriptions and examinations.
 - Practise explaining requirements and findings clearly.
 - Reflect on responsibility, reliability, and the effects of systems on people.

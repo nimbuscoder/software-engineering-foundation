@@ -10,7 +10,7 @@ The ideas start from everyday situations you can easily picture. Only after you 
 
 **Estimated total time:** 5–7 hours
 
-**Core objectives:**
+### Core objectives
 - Organise information in different ways and notice when each way is useful.
 - See that two correct solutions can take different amounts of work.
 - Make clear agreements between different parts of a system.

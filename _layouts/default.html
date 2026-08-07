@@ -21,9 +21,12 @@
       <div class="inner site-header-inner">
         <div class="site-hero">
           <a href="{{ '/' | absolute_url }}">
-            <h1>Software Engineering - Foundation</h1>
+            <h1>Software Engineering Foundations</h1>
           </a>
-          <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+          <h2 class="site-tagline">
+            <span class="site-tagline-line">For secondary students and beyond</span>
+            <span class="site-tagline-line">Learn to think clearly, specify precisely, and build reliably with AI.</span>
+          </h2>
         </div>
       </div>
     </header>
@@ -36,6 +39,7 @@
 
         <section id="main-content">
           {{ content }}
+          {% include page-nav.html %}
         </section>
       </div>
     </div>

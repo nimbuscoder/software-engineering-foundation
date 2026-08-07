@@ -12,7 +12,7 @@ The same habits trained here—precise purpose, explicit rules, concrete example
 
 **Estimated total time:** 4–6 hours
 
-**Core objectives:**
+### Core objectives
 - Convert a clear description into a structured request containing Purpose, Rules, Examples, Constraints, and a Self-check.
 - Examine every generated solution systematically against the original rules and examples.
 - Improve results by refining the request design rather than by endlessly patching the output.

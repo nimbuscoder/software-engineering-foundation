@@ -1,69 +1,61 @@
-# Software Engineering Foundations for the Age of Generative Systems
+# Software Engineering Foundations
 
-## For Secondary Students and Beyond
+**For secondary students and beyond**  
+**Learn to think clearly, specify precisely, and build reliably with AI.**
 
-### Purpose
+This curriculum develops the durable habits required to design, direct, and evaluate software systems in an age of generative tools. The emphasis is not on memorising syntax. It is on defining problems with precision, structuring constraints clearly, examining results rigorously, and retaining independent judgement — whether you write the code yourself or collaborate with AI.
 
-This curriculum develops the durable habits of mind required to design, direct, and evaluate software systems in an era when generative tools can produce working solutions from clear descriptions.
-
-The most valuable skills are not the memorisation of syntax. They are the ability to define problems with precision, to structure constraints and desired behaviour clearly, to examine results rigorously, and to retain independent judgement.
-
-Every lesson reinforces the same core practices: precise description before implementation, systematic examination of results, and explicit attention to failure conditions. These practices remain useful whether the student later writes code by hand, collaborates with generative tools, or designs systems at larger scale.
-
-### Guiding Principles
-
-Return to these principles throughout the curriculum:
-
-1. **Understanding precedes implementation.** Write a clear description of required behaviour before producing or requesting any instructions.
-2. **Every solution must be examined.** Treat generated or hand-written code as a hypothesis to be tested against the original description, rules, and edge cases.
-3. **Constraints create reliability.** Explicit rules, boundaries, and concrete examples reduce ambiguity and improve the quality of both human and machine-generated work.
-4. **Structure is a tool, not a prison.** Begin with clear structure when learning. Later, express the same principles more fluidly when the task benefits from narrative clarity or natural flow.
-5. **Failure conditions matter.** Always ask under what conditions a solution would fail or produce incorrect results.
-6. **Judgement remains human.** Generative tools are powerful collaborators. Final responsibility for correctness, suitability, and consequences stays with the student.
-
-### Learning Goals
-
-By completing this curriculum the student will be able to:
-
-1. Break complex problems into precise, ordered steps and express those steps without ambiguity.
-2. Understand, at a conceptual level, how human intent becomes executable instructions.
-3. Apply fundamental ideas of structure, efficiency, interfaces, and failure to concrete situations.
-4. Write accurate specifications and acceptance criteria before any implementation.
-5. Design simple system boundaries and clear interfaces.
-6. Critically evaluate any solution (hand-written or generated) against requirements, constraints, and edge cases.
-7. Construct structured requests for generative tools that include purpose, rules, examples, constraints, and verification steps, and later evolve toward more fluid, high-quality prompting when appropriate.
-8. Complete projects that involve genuine trade-offs and real constraints.
-9. Reflect on the responsibilities that accompany the creation and direction of software systems.
-
-### How to Use These Materials
-
-- Work through the modules in sequence. Each builds directly on the previous.
-- Complete one short lesson at a time. Most require 20–40 minutes of focused work.
-- Keep a dedicated notebook for specifications, structured requests, examination notes, and reflections.
-- After every activity that produces or generates a solution, pause and examine the result against the original description and rules.
-- Prefer depth of understanding over speed or volume of work completed.
-- Revisit earlier lessons whenever a concept feels unclear.
-
-### Recommended Tools
-
-- **[Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro)** — a free online Python environment; no installation required
-- A simple text editor or notebook for writing precise descriptions, structured requests, and reflections
-- Access to a generative AI assistant (use it only after writing a clear specification or structured request, and always examine the output carefully)
-
-### Curriculum Structure
-
-| Module | Title | Focus |
-|--------|-------|-------|
-| 01 | Building Computational Thinking and Basic Programming Intuition | Thinking in precise steps; expressing simple behaviour clearly |
-| 02 | Understanding What Happens Under the Hood | Connecting human description to machine execution |
-| 03 | Core Computer Science Foundations | Structure, efficiency, and basic system concepts |
-| 04 | Higher-Level Software Engineering Skills | Specification, interfaces, constraints, and evaluation |
-| 05 | Collaborating with Generative Tools | Designing structured requests, examining results, and evolving prompt quality |
-| 06 | Projects That Reflect the New Reality | Applying all skills under realistic constraints |
-| 07 | Broadening Perspective and Complementary Strengths | Domain awareness, communication, and responsibility |
-
-The detailed lessons appear in the corresponding module files. Begin with Module 01 and proceed sequentially.
+These practices form the foundation for the next generation of engineers.
 
 ---
 
-*This curriculum is intended as a durable foundation. Progress is measured by the clarity of the student’s thinking, the quality of the specifications and requests produced, and the thoroughness of examination applied to every solution.*
+## What you will be able to do
+
+- Define problems with precision before writing or requesting any code
+- Construct structured requests that guide generative tools reliably
+- Examine every solution against clear rules, examples, and edge cases
+- Make deliberate trade-offs and keep final judgement in your own hands
+- Complete realistic projects that combine description, constraints, and careful evaluation
+
+---
+
+## How the curriculum works
+
+The materials are organised into seven progressive modules. Each module builds directly on the previous one. Lessons are short (most take 20–40 minutes) and designed for independent study.
+
+You will keep a dedicated notebook for specifications, structured requests, examination notes, and reflections. After every solution — whether written by hand or generated — you will pause and examine it against the original description and rules.
+
+Progress is measured by the clarity of your thinking and the quality of your examination, not by the quantity of code produced.
+
+---
+
+## The seven modules
+
+1. **[Computational Thinking]({{ '/module-01/' | relative_url }})** — Think in precise steps and express simple behaviour clearly
+2. **[Under the Hood]({{ '/module-02/' | relative_url }})** — Connect human description to machine execution
+3. **[Core CS Foundations]({{ '/module-03/' | relative_url }})** — Structure, efficiency, and basic system concepts
+4. **[Software Engineering Skills]({{ '/module-04/' | relative_url }})** — Specification, interfaces, constraints, and evaluation
+5. **[Collaborating with AI]({{ '/module-05/' | relative_url }})** — Design structured requests, examine results, and evolve prompt quality
+6. **[Realistic Projects]({{ '/module-06/' | relative_url }})** — Apply all skills under realistic constraints and trade-offs
+7. **[Perspective & Responsibility]({{ '/module-07/' | relative_url }})** — Domain awareness, communication, and responsibility
+
+---
+
+## Guiding principles
+
+1. Understanding precedes implementation
+2. Every solution must be examined
+3. Constraints create reliability
+4. Structure is a tool, not a prison
+5. Failure conditions matter
+6. Judgement remains human
+
+---
+
+**[Start with Computational Thinking →]({{ '/module-01/' | relative_url }})**
+
+Work through the modules in sequence. Keep a notebook. Examine every result.
+
+---
+
+*This curriculum is a durable foundation for students who intend to design and build reliably in collaboration with generative tools.*

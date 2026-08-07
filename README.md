@@ -9,7 +9,7 @@ A self-study syllabus for young learners (ages 12–15) — systems thinking, pr
 
 ## For students
 
-Open the [course site](https://nimbuscoder-io.github.io/software-engineering-foundation/), start with **Home**, then **Module 01**. Work through the modules in order. Use the [Python playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro) to try code examples.
+Open the [course site](https://nimbuscoder-io.github.io/software-engineering-foundation/), start with **Home**, then **Computational Thinking**. Work through the modules in order. Use the [Python playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro) to try code examples.
 
 ## For contributors
 

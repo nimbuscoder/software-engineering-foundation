@@ -14,38 +14,54 @@ MODULES = [
         "01",
         "01_Module_Building_Computational_Thinking.md",
         "Module 01 — Building Computational Thinking",
+        "Building Computational Thinking and Basic Programming Intuition",
+        "Computational Thinking",
     ),
     (
         "02",
         "02_Module_Understanding_Under_the_Hood.md",
         "Module 02 — Understanding Under the Hood",
+        "Understanding What Happens Under the Hood",
+        "Under the Hood",
     ),
     (
         "03",
         "03_Module_Core_Computer_Science_Foundations.md",
         "Module 03 — Core Computer Science Foundations",
+        "Core Computer Science Foundations",
+        "Core CS Foundations",
     ),
     (
         "04",
         "04_Module_Higher_Level_Software_Engineering_Skills.md",
         "Module 04 — Higher-Level Software Engineering Skills",
+        "Higher-Level Software Engineering Skills",
+        "Software Engineering Skills",
     ),
     (
         "05",
         "05_Module_Collaborating_with_Generative_Tools.md",
         "Module 05 — Collaborating with Generative Tools",
+        "Collaborating with Generative Tools",
+        "Collaborating with AI",
     ),
     (
         "06",
         "06_Module_Projects_Reflecting_the_New_Reality.md",
         "Module 06 — Projects for the New Reality",
+        "Projects That Reflect the New Reality",
+        "Realistic Projects",
     ),
     (
         "07",
         "07_Module_Broadening_Perspective.md",
         "Module 07 — Broadening Perspective",
+        "Broadening Perspective and Complementary Strengths",
+        "Perspective & Responsibility",
     ),
 ]
+
+MODULE_MENU_LABELS = {number: menu_label for number, *_rest, menu_label in MODULES}
 
 NAVIGATION_DATA = ROOT / "_data" / "navigation.yml"
 
@@ -143,25 +159,17 @@ def split_module_sections(content: str) -> tuple[str, list[dict[str, str]]]:
     return module_heading, sections
 
 
-def module_short_title(full_title: str) -> str:
-    prefix = "Module "
-    if full_title.startswith(prefix):
-        return full_title.split(" — ", 1)[0]
-    return full_title
-
-
 def write_navigation_data() -> None:
     NAVIGATION_DATA.parent.mkdir(parents=True, exist_ok=True)
     lines = ["modules:"]
 
-    for number, source_name, title in MODULES:
+    for number, source_name, page_title, full_title, menu_label in MODULES:
         source_path = ROOT / source_name
         sections = split_module_sections(source_path.read_text(encoding="utf-8"))[1]
-        short_title = module_short_title(title)
 
         lines.append(f"  - number: {yaml_string(number)}")
-        lines.append(f"    title: {yaml_string(title)}")
-        lines.append(f"    short_title: {yaml_string(short_title)}")
+        lines.append(f"    title: {yaml_string(full_title)}")
+        lines.append(f"    short_title: {yaml_string(menu_label)}")
         lines.append(f"    url: {yaml_string(section_url(number, 'module-overview'))}")
         lines.append("    sections:")
 
@@ -171,6 +179,23 @@ def write_navigation_data() -> None:
             lines.append(f"        short_title: {yaml_string(section['short_title'])}")
             lines.append(f"        slug: {yaml_string(section['slug'])}")
             lines.append(f"        url: {yaml_string(url)}")
+
+    lines.append("pages:")
+    lines.append(f"  - label: {yaml_string('Home')}")
+    lines.append(f"    url: {yaml_string('/')}")
+    lines.append(f"    key: {yaml_string('home')}")
+
+    for number, source_name, _page_title, _full_title, menu_label in MODULES:
+        source_path = ROOT / source_name
+        sections = split_module_sections(source_path.read_text(encoding="utf-8"))[1]
+
+        for section in sections:
+            slug = section["slug"]
+            label = menu_label if slug == "module-overview" else section["short_title"]
+            lines.append(f"  - label: {yaml_string(label)}")
+            lines.append(f"    url: {yaml_string(section_url(number, slug))}")
+            lines.append(f"    module: {yaml_string(number)}")
+            lines.append(f"    section: {yaml_string(slug)}")
 
     NAVIGATION_DATA.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -189,43 +214,82 @@ def write_page(path: Path, front_matter: dict[str, str], body: str) -> None:
     path.write_text("\n".join(fm_lines) + "\n\n" + body.strip() + "\n", encoding="utf-8")
 
 
+PLAYGROUND_LINK = re.compile(
+    r"\[([^\]]+)\]\((https://www\.onlineide\.pro[^\)]+)\)(?:\{[^\}]+\})?"
+)
+
+MODULE_LINK = re.compile(
+    r"\[([^\]]+)\]\("
+    r"(\{\{\s*['\"]/module-(\d+)/['\"]\s*\|\s*relative_url\s*\}\}|/module-(\d+)/)"
+    r"\)"
+)
+
+
+def module_link_titles() -> dict[str, set[str]]:
+    titles: dict[str, set[str]] = {}
+    for number, _source, page_title, full_title, menu_label in MODULES:
+        titles[number] = {
+            page_title,
+            full_title,
+            f"Module {number}",
+            f"Module {int(number)}",
+        }
+    return titles
+
+
+MODULE_LINK_TITLES = module_link_titles()
+
+
+def should_rewrite_module_link(link_text: str, number: str) -> bool:
+    if link_text in MODULE_LINK_TITLES.get(number, set()):
+        return True
+    return bool(re.match(rf"Module {number}\s*[—:-]", link_text))
+
+
+def rewrite_module_link_text(content: str) -> str:
+    """Use menu labels for links to module overview pages."""
+
+    def replace(match: re.Match[str]) -> str:
+        link_text = match.group(1)
+        url = match.group(2)
+        number = match.group(3) or match.group(4)
+        menu_label = MODULE_MENU_LABELS.get(number)
+        if menu_label is None or not should_rewrite_module_link(link_text, number):
+            return match.group(0)
+        return f"[{menu_label}]({url})"
+
+    return MODULE_LINK.sub(replace, content)
+
+
+def open_external_playground_links(content: str) -> str:
+    """Open Online IDE Pro links in a new tab."""
+
+    def add_attrs(match: re.Match[str]) -> str:
+        text = match.group(1)
+        url = match.group(2)
+        if "target=" in match.group(0):
+            return match.group(0)
+        return (
+            f'[{text}]({url}){{:target="_blank" rel="noopener noreferrer"}}'
+        )
+
+    return PLAYGROUND_LINK.sub(add_attrs, content)
+
+
 def enhance_syllabus(content: str) -> str:
-    start_banner = """
-> **New here?** Start with [Module 01 — Building Computational Thinking]({{ '/module-01/' | relative_url }}) and work through the modules in order.
+    first_label = MODULE_MENU_LABELS["01"]
+    start_banner = f"""
+> **New here?** Start with [{first_label}]({{{{ '/module-01/' | relative_url }}}}) and work through the modules in order.
 >
 > **Try code online:** [Online IDE Pro Python Playground](https://www.onlineide.pro/playground/python?utm_source=online-python&utm_medium=navbar&utm_campaign=onlineidepro)
 """
     if "New here?" not in content:
         content = content.replace(
-            "\n### Purpose of This Syllabus\n",
-            f"\n{start_banner}\n### Purpose of This Syllabus\n",
+            "\n---\n",
+            f"\n{start_banner}\n---\n",
             1,
         )
-
-    replacements = {
-        "| 01 | Building Computational Thinking and Basic Programming Intuition |":
-        "| 01 | [Building Computational Thinking and Basic Programming Intuition]({{ '/module-01/' | relative_url }}) |",
-        "| 02 | Understanding What Happens Under the Hood |":
-        "| 02 | [Understanding What Happens Under the Hood]({{ '/module-02/' | relative_url }}) |",
-        "| 03 | Core Computer Science Foundations |":
-        "| 03 | [Core Computer Science Foundations]({{ '/module-03/' | relative_url }}) |",
-        "| 04 | Higher-Level Software Engineering Skills |":
-        "| 04 | [Higher-Level Software Engineering Skills]({{ '/module-04/' | relative_url }}) |",
-        "| 05 | Collaborating with Generative Tools |":
-        "| 05 | [Collaborating with Generative Tools]({{ '/module-05/' | relative_url }}) |",
-        "| 06 | Projects That Reflect the New Reality |":
-        "| 06 | [Projects That Reflect the New Reality]({{ '/module-06/' | relative_url }}) |",
-        "| 07 | Broadening Perspective and Complementary Strengths |":
-        "| 07 | [Broadening Perspective and Complementary Strengths]({{ '/module-07/' | relative_url }}) |",
-    }
-    for old, new in replacements.items():
-        content = content.replace(old, new)
-
-    content = content.replace(
-        "The detailed lessons for each module are provided in separate files. Begin with Module 01 and proceed sequentially.",
-        "Begin with [Module 01]({{ '/module-01/' | relative_url }}) and proceed sequentially through each module.",
-    )
-    return content
+    return rewrite_module_link_text(open_external_playground_links(content))
 
 
 def tag_expected_outcomes_lists(content: str) -> str:
@@ -255,7 +319,9 @@ def tag_expected_outcomes_lists(content: str) -> str:
 
 
 def prepare_section_body(content: str) -> str:
-    return tag_expected_outcomes_lists(content)
+    return rewrite_module_link_text(
+        open_external_playground_links(tag_expected_outcomes_lists(content))
+    )
 
 
 def clean_generated_pages() -> None:
@@ -270,7 +336,9 @@ def clean_generated_pages() -> None:
             path.unlink()
 
 
-def generate_module_pages(number: str, source_name: str, module_title: str) -> int:
+def generate_module_pages(
+    number: str, source_name: str, module_title: str, menu_label: str
+) -> int:
     source_path = ROOT / source_name
     module_heading, sections = split_module_sections(
         source_path.read_text(encoding="utf-8")
@@ -290,7 +358,7 @@ def generate_module_pages(number: str, source_name: str, module_title: str) -> i
                 body = f"{module_heading}\n\n{body}"
         else:
             path = module_dir / f"{slug}.md"
-            page_title = f"{section['title']} — {module_short_title(module_title)}"
+            page_title = f"{section['title']} — {menu_label}"
             body = section["body"]
 
         write_page(
@@ -325,10 +393,12 @@ def main() -> None:
     )
 
     total_pages = 1
-    for number, source_name, title in MODULES:
+    for number, source_name, module_title, _full_title, menu_label in MODULES:
         if not (ROOT / source_name).exists():
             raise FileNotFoundError(f"Missing {source_name}")
-        total_pages += generate_module_pages(number, source_name, title)
+        total_pages += generate_module_pages(
+            number, source_name, module_title, menu_label
+        )
 
     print(f"Generated {total_pages} Jekyll pages.")
 

@@ -8,7 +8,7 @@ This module builds a clear picture of how a human description of behaviour becom
 
 **Estimated total time:** 3–5 hours
 
-**Core objectives:**
+### Core objectives
 - Explain, in simple terms, the difference between source instructions and machine instructions.
 - Understand the role of translation (compilation or interpretation) at a conceptual level.
 - Recognise that the same human intention can be realised by different sequences of low-level instructions.

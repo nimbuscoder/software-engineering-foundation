@@ -54,7 +54,7 @@ header .site-hero h1 {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
-header .site-hero h2 {
+header .site-hero h2.site-tagline {
   width: auto;
   max-width: 760px;
   margin: 14px auto 0;
@@ -63,6 +63,13 @@ header .site-hero h2 {
   font-size: 22px;
   line-height: 1.35;
   text-shadow: 0 0 12px rgba(255, 255, 255, 0.5), 0 1px 3px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+header .site-tagline-line {
+  display: block;
 }
 
 @media screen and (max-width: 767px) {
@@ -84,7 +91,7 @@ header .site-hero h2 {
     padding: 0 4px;
   }
 
-  header .site-hero h2 {
+  header .site-hero h2.site-tagline {
     display: none;
   }
 }
@@ -133,6 +140,20 @@ header .site-hero h2 {
 }
 
 /* Course readability tweaks on top of Architect */
+a[target="_blank"]::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 0.2em;
+  font-size: 0.82em;
+  line-height: 1;
+  opacity: 0.75;
+  text-decoration: none;
+}
+
+a[target="_blank"]:hover::after {
+  opacity: 1;
+}
+
 .main-content {
   max-width: 54rem;
 }
@@ -200,10 +221,16 @@ header .site-hero h2 {
   font-weight: bold;
 }
 
-.main-content h2 {
+#main-content h2 {
   margin-top: 1.75rem;
   padding-bottom: 0.25rem;
   border-bottom: 1px solid #dfe2e5;
+}
+
+#main-content h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
 }
 
 .main-content blockquote {
@@ -234,6 +261,65 @@ header .site-hero h2 {
   border-radius: 6px;
 }
 
+.page-nav {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #dfe2e5;
+}
+
+.page-nav-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.page-nav-link {
+  display: flex;
+  flex-direction: column;
+  max-width: 45%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #dfe2e5;
+  border-radius: 6px;
+  background: #f6f8fa;
+  color: #24292e;
+  text-decoration: none;
+  line-height: 1.35;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.page-nav-link:hover {
+  border-color: #4078c0;
+  background: #fff;
+  text-decoration: none;
+}
+
+.page-nav-prev {
+  align-items: flex-start;
+}
+
+.page-nav-next {
+  align-items: flex-end;
+  margin-left: auto;
+  text-align: right;
+}
+
+.page-nav-direction {
+  font-size: 0.8125rem;
+  color: #586069;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.page-nav-label {
+  font-size: 0.9375rem;
+  font-weight: bold;
+  color: #4078c0;
+}
+
+.page-nav-spacer {
+  flex: 1;
+}
+
 @media screen and (max-width: 767px) {
   #content-wrapper .inner.clearfix {
     display: flex;
@@ -261,5 +347,23 @@ header .site-hero h2 {
   .main-content {
     font-size: 16px;
     line-height: 1.65;
+  }
+
+  .page-nav-inner {
+    flex-direction: column;
+  }
+
+  .page-nav-link {
+    max-width: none;
+  }
+
+  .page-nav-next {
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .page-nav-spacer {
+    display: none;
   }
 }

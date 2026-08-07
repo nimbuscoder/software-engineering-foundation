@@ -1,0 +1,45 @@
+{% unless page.title == 'Home' %}
+{% assign prev_page = nil %}
+{% assign next_page = nil %}
+{% assign seen_current = false %}
+{% for p in site.data.navigation.pages %}
+  {% assign is_current = false %}
+  {% if page.title == 'Home' and p.key == 'home' %}
+    {% assign is_current = true %}
+  {% elsif page.module == p.module and page.section == p.section %}
+    {% assign is_current = true %}
+  {% endif %}
+
+  {% if seen_current and next_page == nil %}
+    {% assign next_page = p %}
+  {% endif %}
+
+  {% if is_current %}
+    {% assign seen_current = true %}
+  {% elsif seen_current == false %}
+    {% assign prev_page = p %}
+  {% endif %}
+{% endfor %}
+
+{% if prev_page or next_page %}
+<nav class="page-nav" aria-label="Page navigation">
+  <div class="page-nav-inner">
+    {% if prev_page %}
+      <a class="page-nav-link page-nav-prev" href="{{ prev_page.url | relative_url }}">
+        <span class="page-nav-direction">Back to</span>
+        <span class="page-nav-label">{{ prev_page.label }}</span>
+      </a>
+    {% else %}
+      <span class="page-nav-spacer" aria-hidden="true"></span>
+    {% endif %}
+
+    {% if next_page %}
+      <a class="page-nav-link page-nav-next" href="{{ next_page.url | relative_url }}">
+        <span class="page-nav-direction">Next to</span>
+        <span class="page-nav-label">{{ next_page.label }}</span>
+      </a>
+    {% endif %}
+  </div>
+</nav>
+{% endif %}
+{% endunless %}
