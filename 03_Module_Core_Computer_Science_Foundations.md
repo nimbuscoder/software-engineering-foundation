@@ -25,13 +25,13 @@ The ideas start from everyday situations you can easily picture. Only after you 
 
 **Goal:** Learn when it is useful to keep items in a fixed order and how that order affects what you can do.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Choose a simple situation that needs items kept in order.
-- [ ] Write a clear description of what the ordered list should do.
-- [ ] Create and use a list in Python (add, remove, and look at items by position).
-- [ ] Check what happens when you ask for a position that does not exist.
-- [ ] Explain when keeping order is helpful and when it might cause problems.
+- Choose a simple situation that needs items kept in order.
+- Write a clear description of what the ordered list should do.
+- Create and use a list in Python (add, remove, and look at items by position).
+- Check what happens when you ask for a position that does not exist.
+- Explain when keeping order is helpful and when it might cause problems.
 
 **Everyday starting point**  
 Imagine you are packing a school bag. The order of items can matter (books at the bottom, lunch on top). Or imagine a queue of people waiting for food — the first person in line should be served first.
@@ -60,13 +60,13 @@ Imagine you are packing a school bag. The order of items can matter (books at th
 
 **Goal:** Learn a different way to organise information — by giving each piece a clear name instead of a position number.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Choose a situation where looking up information by a name is more useful than by position.
-- [ ] Write a clear description of what the named collection should do.
-- [ ] Create and use a dictionary in Python (add, retrieve, and handle a missing name).
-- [ ] Compare this way of organising with the ordered list from the previous lesson.
-- [ ] Explain when using the wrong organisation would make things harder or more error-prone.
+- Choose a situation where looking up information by a name is more useful than by position.
+- Write a clear description of what the named collection should do.
+- Create and use a dictionary in Python (add, retrieve, and handle a missing name).
+- Compare this way of organising with the ordered list from the previous lesson.
+- Explain when using the wrong organisation would make things harder or more error-prone.
 
 **Everyday starting point**  
 Think about a contacts list on a phone. You do not look for “the third person.” You look for “Alex” or “Mum.” The name is the key that lets you find the information quickly.
@@ -95,13 +95,13 @@ Think about a contacts list on a phone. You do not look for “the third person.
 
 **Goal:** Notice that two correct solutions can still be different in how much work they make the computer do.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Write a clear description of a small task that can be solved in more than one way.
-- [ ] Create two different solutions that both give the correct answer.
-- [ ] Roughly count the steps or comparisons each solution needs.
-- [ ] Explain why one solution might be better even though both are correct.
-- [ ] Think about what happens when the problem becomes larger.
+- Write a clear description of a small task that can be solved in more than one way.
+- Create two different solutions that both give the correct answer.
+- Roughly count the steps or comparisons each solution needs.
+- Explain why one solution might be better even though both are correct.
+- Think about what happens when the problem becomes larger.
 
 **Everyday starting point**  
 Imagine you need to find the tallest person in a group of five friends. You could compare them one by one in different orders. Both ways can give the right answer, but one way might need more comparisons than the other.
@@ -127,14 +127,14 @@ Imagine you need to find the tallest person in a group of five friends. You coul
 
 **Goal:** Learn that different parts of a system can work together only when they share a clear agreement about how they communicate.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Describe a simple system that has two distinct parts.
-- [ ] Write a clear agreement (what information is passed, in what form, and what each part can expect).
-- [ ] Build the two parts so they follow the agreement.
-- [ ] Break the agreement on purpose and observe what happens.
-- [ ] Restore the agreement and confirm that the system works again.
-- [ ] Explain why a clear agreement makes it easier to check or change one part without breaking the other.
+- Describe a simple system that has two distinct parts.
+- Write a clear agreement (what information is passed, in what form, and what each part can expect).
+- Build the two parts so they follow the agreement.
+- Break the agreement on purpose and observe what happens.
+- Restore the agreement and confirm that the system works again.
+- Explain why a clear agreement makes it easier to check or change one part without breaking the other.
 
 **Everyday starting point**  
 Think about ordering food at a counter. You tell the cashier what you want (the agreement). The cashier tells the kitchen. If you speak unclearly or the cashier passes the wrong message, the order fails. The agreement between you and the cashier (and between the cashier and the kitchen) must be clear.
@@ -167,13 +167,13 @@ Think about ordering food at a counter. You tell the cashier what you want (the 
 
 **Goal:** Practise describing clearly what information a small system must remember and how the pieces of information relate to each other.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Choose a small real situation and write a clear description of the information it needs to store.
-- [ ] Decide on simple structures (lists, dictionaries, or a combination) to hold that information.
-- [ ] Build a minimal version that can store and retrieve the information.
-- [ ] Test with normal data and with missing or unexpected data.
-- [ ] Improve the original description if testing shows that something important was missing.
+- Choose a small real situation and write a clear description of the information it needs to store.
+- Decide on simple structures (lists, dictionaries, or a combination) to hold that information.
+- Build a minimal version that can store and retrieve the information.
+- Test with normal data and with missing or unexpected data.
+- Improve the original description if testing shows that something important was missing.
 
 **Everyday starting point**  
 Imagine a simple classroom library. You need to remember which books exist, who has borrowed them, and when they are due. If you forget to record one of these pieces, the system cannot answer basic questions.
@@ -202,14 +202,14 @@ Imagine a simple classroom library. You need to remember which books exist, who 
 
 **Goal:** Combine organising information, noticing work differences, and making clear agreements inside one small system that has real rules.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Define a small system that must store and retrieve information under at least one real rule (constraint).
-- [ ] Write a complete description that includes purpose, information needed, actions, the rule that must never be broken, and what to do with invalid input.
-- [ ] Design how the information is organised and the agreements between the main parts.
-- [ ] Build the system.
-- [ ] Test it carefully against the description, especially the rule and invalid inputs.
-- [ ] Record any changes you made to the description after testing the first version.
+- Define a small system that must store and retrieve information under at least one real rule (constraint).
+- Write a complete description that includes purpose, information needed, actions, the rule that must never be broken, and what to do with invalid input.
+- Design how the information is organised and the agreements between the main parts.
+- Build the system.
+- Test it carefully against the description, especially the rule and invalid inputs.
+- Record any changes you made to the description after testing the first version.
 
 **Project brief**  
 Create a simple tracker for a limited set of items (for example: classroom supplies, personal books, or points in a game). The system must enforce at least one clear rule (examples: quantity cannot become negative, a maximum value cannot be exceeded, or certain items cannot be removed once added).

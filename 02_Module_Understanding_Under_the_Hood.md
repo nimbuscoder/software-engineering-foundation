@@ -22,12 +22,12 @@ This module builds a clear picture of how a human description of behaviour becom
 
 **Goal:** Distinguish clearly between the instructions a human writes and the instructions a processor executes.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Write a simple instruction in ordinary English.
-- [ ] Write the same idea as a short Python statement.
-- [ ] Explain in your own words why the processor cannot run Python directly.
-- [ ] State why humans prefer the higher-level form.
+- Write a simple instruction in ordinary English.
+- Write the same idea as a short Python statement.
+- Explain in your own words why the processor cannot run Python directly.
+- State why humans prefer the higher-level form.
 
 **Activity:**
 1. In your notebook, write a very simple instruction in ordinary English (example: “Add 5 and 3 and remember the result”).
@@ -50,12 +50,12 @@ By the end of this lesson you should be able to:
 
 **Goal:** Understand that a translator (compiler or interpreter) converts human-oriented instructions into machine-oriented instructions.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Write a precise description of a tiny program.
-- [ ] Implement and run that program in Python.
-- [ ] Explain that a translator converted the Python instructions into a form the processor can execute.
-- [ ] Identify one possible way the translation could go wrong.
+- Write a precise description of a tiny program.
+- Implement and run that program in Python.
+- Explain that a translator converted the Python instructions into a form the processor can execute.
+- Identify one possible way the translation could go wrong.
 
 **Model analogy**  
 A translator is similar to a person who takes a recipe written in one language and rewrites it in the exact language the cook understands.
@@ -81,12 +81,12 @@ A translator is similar to a person who takes a recipe written in one language a
 
 **Goal:** Recognise that many different sequences of low-level instructions can achieve the same observable behaviour.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Write a precise description of a simple calculation.
-- [ ] Implement the calculation in two different ways in Python.
-- [ ] Confirm that both ways produce the same result.
-- [ ] Explain why one version might be preferable even if both are correct.
+- Write a precise description of a simple calculation.
+- Implement the calculation in two different ways in Python.
+- Confirm that both ways produce the same result.
+- Explain why one version might be preferable even if both are correct.
 
 **Activity:**
 1. Write a precise description of a simple calculation (example: find the sum of the numbers 1 through 5).
@@ -109,12 +109,12 @@ By the end of this lesson you should be able to:
 
 **Goal:** Form a basic mental model of how a program remembers information while it runs.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Write a short Python program that stores a value, changes it, and then uses the new value.
-- [ ] Describe what must be happening inside the computer for the program to “remember” the value between steps.
-- [ ] Explain the idea of a temporary workspace (memory).
-- [ ] State one way understanding memory helps when examining a generated solution.
+- Write a short Python program that stores a value, changes it, and then uses the new value.
+- Describe what must be happening inside the computer for the program to “remember” the value between steps.
+- Explain the idea of a temporary workspace (memory).
+- State one way understanding memory helps when examining a generated solution.
 
 **Activity:**
 1. Write a short Python program that stores a value, changes it, and then uses the new value.
@@ -137,12 +137,12 @@ By the end of this lesson you should be able to:
 
 **Goal:** Practise tracing a clear human intention all the way to observable behaviour, while remaining aware of the hidden translation steps.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Write a precise specification of a simple interactive behaviour, including what should happen if the input is empty.
-- [ ] Implement and carefully test the behaviour.
-- [ ] Write a short paragraph that traces the path from human intention through high-level instructions, translation, and observed result.
-- [ ] Identify one place in the chain where a misunderstanding could have produced a wrong result.
+- Write a precise specification of a simple interactive behaviour, including what should happen if the input is empty.
+- Implement and carefully test the behaviour.
+- Write a short paragraph that traces the path from human intention through high-level instructions, translation, and observed result.
+- Identify one place in the chain where a misunderstanding could have produced a wrong result.
 
 **Activity:**
 1. Choose a simple interactive behaviour (example: “Ask for a name and then greet the person by name”).

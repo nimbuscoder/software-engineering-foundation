@@ -25,12 +25,12 @@ The ideas begin with everyday situations you can picture. Formal names for the i
 
 **Goal:** Practise writing a description that is clear enough for another person (or a computer helper) to follow without needing to ask extra questions.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Choose a small system and write a description that includes its purpose, what it accepts, what it produces, and how it should behave with unexpected input.
-- [ ] Include at least two concrete examples of correct behaviour.
-- [ ] Review the description and remove any remaining unclear parts.
-- [ ] Stop at the description stage (do not build the system yet).
+- Choose a small system and write a description that includes its purpose, what it accepts, what it produces, and how it should behave with unexpected input.
+- Include at least two concrete examples of correct behaviour.
+- Review the description and remove any remaining unclear parts.
+- Stop at the description stage (do not build the system yet).
 
 **Everyday starting point**  
 Imagine you are explaining to a younger sibling exactly how to make a simple snack. If your instructions are vague, they will get stuck or do the wrong thing. The same problem happens when describing a computer system.
@@ -83,11 +83,11 @@ else:
 
 **Goal:** Extend a description with clear rules the system must never break and with situations that sit at the edge of normal use.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Add at least three clear rules (constraints) to a description.
-- [ ] List at least four edge cases and state the required behaviour for each.
-- [ ] Review the completed description for completeness.
+- Add at least three clear rules (constraints) to a description.
+- List at least four edge cases and state the required behaviour for each.
+- Review the completed description for completeness.
 
 **Everyday starting point**  
 Think about a simple rule at home: “You may use the kitchen, but you must never leave the stove on unattended.” Or think about what should happen if someone tries to enter a number that is far too high or leaves a field empty. These boundary situations must be decided in advance.
@@ -139,12 +139,12 @@ else:
 
 **Goal:** Practise writing a clear agreement that lets two different parts of a system work together reliably.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Design a small system that has at least two distinct parts.
-- [ ] Write a clear agreement that states what information is passed, in what form, what each part can expect, and what should happen if the agreement is broken.
-- [ ] Keep the focus on the agreement only (do not build the parts yet).
-- [ ] Check whether the agreement is clear enough for someone else to understand.
+- Design a small system that has at least two distinct parts.
+- Write a clear agreement that states what information is passed, in what form, what each part can expect, and what should happen if the agreement is broken.
+- Keep the focus on the agreement only (do not build the parts yet).
+- Check whether the agreement is clear enough for someone else to understand.
 
 **Everyday starting point**  
 Remember the food-counter example. You give a clear order to the cashier. The cashier passes a clear message to the kitchen. If either message is unclear, the order fails. The same idea applies when one part of a computer system talks to another part.
@@ -214,12 +214,12 @@ give_advice(valid)
 
 **Goal:** Learn to turn important requirements into concrete statements that can be tested.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Convert the most important requirements into concrete checks that can be tested.
-- [ ] Write at least five checks in a clear form such as “When the input is X, the system must produce Y.”
-- [ ] Review the checks to make sure they are specific and testable.
-- [ ] Note any part of the original description that is still difficult to turn into a clear check.
+- Convert the most important requirements into concrete checks that can be tested.
+- Write at least five checks in a clear form such as “When the input is X, the system must produce Y.”
+- Review the checks to make sure they are specific and testable.
+- Note any part of the original description that is still difficult to turn into a clear check.
 
 **Everyday starting point**  
 Instead of saying “the system should work well,” we need statements we can actually test: “When the temperature is 35, the system must advise drinking water.” These concrete statements become the standard we use later to examine any solution.
@@ -272,12 +272,12 @@ print(result)
 
 **Goal:** Practise examining a solution against its description instead of simply checking that it “seems to work.”
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Create a simple test plan that covers normal cases, every stated edge case, and every rule.
-- [ ] Carry out the test plan and record the results carefully.
-- [ ] For any failure, decide whether the description needs improvement or the solution is incorrect.
-- [ ] Write a short evaluation note that states whether the solution meets the description and why.
+- Create a simple test plan that covers normal cases, every stated edge case, and every rule.
+- Carry out the test plan and record the results carefully.
+- For any failure, decide whether the description needs improvement or the solution is incorrect.
+- Write a short evaluation note that states whether the solution meets the description and why.
 
 **Everyday starting point**  
 Imagine you have written clear instructions for making a snack and someone follows them. You do not just taste the final snack. You check each step against the original instructions, especially the difficult or unusual cases. The same careful comparison is needed with computer solutions.
@@ -329,14 +329,14 @@ for value in test_cases:
 
 **Goal:** Complete a full cycle of clear description, rules, agreements, concrete checks, building or generating a solution, and careful examination.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Choose a small but non-trivial tool that involves at least one meaningful rule.
-- [ ] Write a full description including purpose, inputs, outputs, rules, edge cases, agreements between parts, and concrete checks.
-- [ ] Build or generate the solution only after the description is complete.
-- [ ] Examine the solution systematically against every part of the description.
-- [ ] Revise either the description or the solution until the concrete checks are met.
-- [ ] Record the most important change that resulted from the examination process.
+- Choose a small but non-trivial tool that involves at least one meaningful rule.
+- Write a full description including purpose, inputs, outputs, rules, edge cases, agreements between parts, and concrete checks.
+- Build or generate the solution only after the description is complete.
+- Examine the solution systematically against every part of the description.
+- Revise either the description or the solution until the concrete checks are met.
+- Record the most important change that resulted from the examination process.
 
 **Project brief**  
 Create a small tool that involves at least one meaningful rule. Suitable examples:

@@ -25,13 +25,13 @@ Each project is designed so that you can complete it using the ideas from earlie
 
 **Goal:** Design and examine a small system that stores information and enforces clear rules.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this project you should be able to:
-- [ ] Write a complete description that includes purpose, information to store, allowed actions, rules, edge cases, and concrete checks.
-- [ ] Design how the information is organised and the agreements between the main parts.
-- [ ] Build or generate a solution only after the description is finished.
-- [ ] Examine the solution against every rule and concrete check.
-- [ ] Produce a short project note covering the most important rule, one trade-off, and the most useful discovery made during examination.
+- Write a complete description that includes purpose, information to store, allowed actions, rules, edge cases, and concrete checks.
+- Design how the information is organised and the agreements between the main parts.
+- Build or generate a solution only after the description is finished.
+- Examine the solution against every rule and concrete check.
+- Produce a short project note covering the most important rule, one trade-off, and the most useful discovery made during examination.
 
 **Everyday starting point**  
 Imagine you want to keep track of classroom supplies or personal books. You need to remember how many of each item you have, and you must never allow the number to go below zero.
@@ -90,14 +90,14 @@ def remove_item(item, amount):
 
 **Goal:** Practise defining and respecting a clear agreement between two different parts of a system.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this project you should be able to:
-- [ ] Write a full description for the overall system and a separate, precise agreement between the two parts.
-- [ ] Make sure the agreement states what information is passed, its form, and the responsibilities of each part.
-- [ ] Build or generate the two parts so that they follow the agreement.
-- [ ] Test each part as independently as possible, then test the combined system.
-- [ ] Deliberately break the agreement in one part, observe the effect, then restore correct behaviour.
-- [ ] Document why the clear agreement made examination and correction easier.
+- Write a full description for the overall system and a separate, precise agreement between the two parts.
+- Make sure the agreement states what information is passed, its form, and the responsibilities of each part.
+- Build or generate the two parts so that they follow the agreement.
+- Test each part as independently as possible, then test the combined system.
+- Deliberately break the agreement in one part, observe the effect, then restore correct behaviour.
+- Document why the clear agreement made examination and correction easier.
 
 **Everyday starting point**  
 Think of a simple order process: one person takes the order and checks it is valid, another person prepares the item. They can only work together if they share a clear agreement about what information is passed.
@@ -156,13 +156,13 @@ give_advice(valid)
 
 **Goal:** Face a situation in which two desirable qualities cannot both be maximised, and make a reasoned choice.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this project you should be able to:
-- [ ] Write a description that clearly names two competing qualities and states which one will be preferred and why.
-- [ ] Include concrete checks that reflect the chosen priority.
-- [ ] Produce a solution that follows the stated priority.
-- [ ] Examine the solution against the checks.
-- [ ] Write a short analysis of what was gained and what was given up by the chosen priority.
+- Write a description that clearly names two competing qualities and states which one will be preferred and why.
+- Include concrete checks that reflect the chosen priority.
+- Produce a solution that follows the stated priority.
+- Examine the solution against the checks.
+- Write a short analysis of what was gained and what was given up by the chosen priority.
 
 **Everyday starting point**  
 Sometimes you cannot have everything at once. For example, a message can be very short and quick, or it can be detailed and careful — but not both at the same time. You must choose which quality matters more for the situation.
@@ -200,13 +200,13 @@ Consequence: Some helpful detail is left out.
 
 **Goal:** Combine clear description, agreements, generation or building, careful examination, and documentation in one complete project.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this project you should be able to:
-- [ ] Write a complete description for a practical mini-system that includes at least three rules and at least one clear agreement between parts.
-- [ ] Define the agreements.
-- [ ] Prepare a high-quality request (or build carefully).
-- [ ] Examine the result against every part of the description and improve it at least once.
-- [ ] Produce a final project summary covering purpose, key rules, most important examination finding, one improvement, and a short statement of what the project taught about systems thinking or precise description.
+- Write a complete description for a practical mini-system that includes at least three rules and at least one clear agreement between parts.
+- Define the agreements.
+- Prepare a high-quality request (or build carefully).
+- Examine the result against every part of the description and improve it at least once.
+- Produce a final project summary covering purpose, key rules, most important examination finding, one improvement, and a short statement of what the project taught about systems thinking or precise description.
 
 **Everyday starting point**  
 Think of a tool a student of your age might actually use: a study-session timer with break rules, a simple reading log with weekly goals, or a points system for a classroom challenge with maximums and penalties.

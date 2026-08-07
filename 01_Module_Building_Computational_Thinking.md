@@ -22,12 +22,12 @@ This module helps you learn to think in clear, ordered steps and to describe sim
 
 **Goal:** Practise breaking a familiar task into exact, ordered instructions that leave no room for guessing.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Choose a simple everyday task.
-- [ ] Write a numbered list of steps that another person could follow without asking questions.
-- [ ] Find and rewrite any step that is unclear or assumes hidden knowledge.
-- [ ] State at least one condition under which your instructions would fail or give the wrong result.
+- Choose a simple everyday task.
+- Write a numbered list of steps that another person could follow without asking questions.
+- Find and rewrite any step that is unclear or assumes hidden knowledge.
+- State at least one condition under which your instructions would fail or give the wrong result.
 
 **Model example of precise steps**  
 Task: Making a cup of instant noodles (this is only an example — choose a different task for your own work).
@@ -45,7 +45,7 @@ Every step says exactly what to do, with what, and (when needed) how long or how
 **Activity:**
 1. Choose a simple everyday task different from the example (for example: packing a school bag, watering a plant, or preparing a glass of milk).
 2. In your notebook, write a precise numbered list of steps that another person could follow without asking any questions.
-3. Check your list against the checklist above. Find any step that is still unclear or that assumes knowledge the other person might not have. Rewrite those steps until they match the standard in the model example.
+3. Check your list against the expected outcomes above. Find any step that is still unclear or that assumes knowledge the other person might not have. Rewrite those steps until they match the standard in the model example.
 4. Ask yourself: Under what conditions would these instructions fail or produce the wrong result? Write your answer under the steps.
 
 **Reflection:**
@@ -62,13 +62,13 @@ Every step says exactly what to do, with what, and (when needed) how long or how
 
 **Goal:** Understand that a variable is a named place that holds a value, and that the name should clearly describe the purpose of the value.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Create three variables with clear, meaningful names.
-- [ ] Display the values of those variables with explanatory text.
-- [ ] Change one value and observe the effect.
-- [ ] Write a precise description of the program’s intended behaviour *before* running it.
-- [ ] Compare the description with the actual result.
+- Create three variables with clear, meaningful names.
+- Display the values of those variables with explanatory text.
+- Change one value and observe the effect.
+- Write a precise description of the program’s intended behaviour *before* running it.
+- Compare the description with the actual result.
 
 **Model example**
 
@@ -103,12 +103,12 @@ print("Books read last month:", books_read_last_month)
 
 **Goal:** Learn how a program can choose different actions based on a condition, and practise stating the condition precisely.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Write a precise description of a decision the program should make.
-- [ ] Implement the decision using an if-else structure.
-- [ ] Test the program with normal values and with a boundary value.
-- [ ] Improve the original description if the boundary case shows an ambiguity.
+- Write a precise description of a decision the program should make.
+- Implement the decision using an if-else structure.
+- Test the program with normal values and with a boundary value.
+- Improve the original description if the boundary case shows an ambiguity.
 
 **Model example of a precise description**  
 “If the temperature is above 30 degrees, advise the user to drink water. Otherwise, advise the user that the temperature is comfortable.”
@@ -134,12 +134,12 @@ By the end of this lesson you should be able to:
 
 **Goal:** Understand when and why a sequence of instructions should be repeated, and how to control the repetition clearly.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Write a precise description of a repetitive task, including when the repetition should stop.
-- [ ] Implement the behaviour using a loop.
-- [ ] Modify the stopping condition and observe the effect.
-- [ ] Explain what would happen if the stopping condition were never met.
+- Write a precise description of a repetitive task, including when the repetition should stop.
+- Implement the behaviour using a loop.
+- Modify the stopping condition and observe the effect.
+- Explain what would happen if the stopping condition were never met.
 
 **Activity:**
 1. Choose a simple repetitive task (for example: printing the numbers from 1 to 10, or counting how many times a particular letter appears in a short word).
@@ -162,12 +162,12 @@ By the end of this lesson you should be able to:
 
 **Goal:** Learn to package a clear piece of behaviour into a named function so that it can be reused and understood independently.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Write a precise description of a small piece of behaviour, including what information it needs and what result it should produce.
-- [ ] Turn the behaviour into a function with a clear name.
-- [ ] Call the function several times with different inputs and examine the outputs.
-- [ ] Change the internal steps of the function and check whether the original description still holds.
+- Write a precise description of a small piece of behaviour, including what information it needs and what result it should produce.
+- Turn the behaviour into a function with a clear name.
+- Call the function several times with different inputs and examine the outputs.
+- Change the internal steps of the function and check whether the original description still holds.
 
 **Activity:**
 1. Identify a small piece of behaviour you have already written (for example, displaying a greeting or calculating a simple total).
@@ -190,14 +190,14 @@ By the end of this lesson you should be able to:
 
 **Goal:** Combine the ideas from previous lessons into a small program that requires a clear specification and careful examination.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Write a complete and precise description of a simple interactive tool.
-- [ ] Include how the tool should respond to different inputs and to unexpected input.
-- [ ] Implement the tool only after the description is finished.
-- [ ] Test the tool with normal inputs, boundary values, and incorrect inputs.
-- [ ] Revise the description or the implementation until the behaviour matches the description.
-- [ ] Record one improvement made after examining the first version.
+- Write a complete and precise description of a simple interactive tool.
+- Include how the tool should respond to different inputs and to unexpected input.
+- Implement the tool only after the description is finished.
+- Test the tool with normal inputs, boundary values, and incorrect inputs.
+- Revise the description or the implementation until the behaviour matches the description.
+- Record one improvement made after examining the first version.
 
 **Activity:**
 1. Decide on a simple interactive tool (examples: a basic quiz that asks two or three questions, a temperature advisor, or a tool that calculates the total of a few numbers).

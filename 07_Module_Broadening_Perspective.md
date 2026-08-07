@@ -24,12 +24,12 @@ The ideas start from everyday situations you can relate to.
 
 **Goal:** Understand why knowledge of a particular subject area strengthens both the way you describe a problem and the way you examine a solution.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Choose a subject that interests you and identify a small problem within it that could be helped by a simple system.
-- [ ] Write a clear description for a solution, paying attention to details that only someone who knows the subject would include.
-- [ ] List at least three pieces of subject knowledge that made the description better than a generic version would have been.
-- [ ] Explain how that same subject knowledge would help when examining a generated solution.
+- Choose a subject that interests you and identify a small problem within it that could be helped by a simple system.
+- Write a clear description for a solution, paying attention to details that only someone who knows the subject would include.
+- List at least three pieces of subject knowledge that made the description better than a generic version would have been.
+- Explain how that same subject knowledge would help when examining a generated solution.
 
 **Everyday starting point**  
 Imagine two people trying to describe a simple football training tracker. One person knows almost nothing about football. The other plays regularly. The second person will naturally include more useful details (positions, match days, injury rules, etc.). The same advantage appears when you know the subject of any system you are describing.
@@ -65,12 +65,12 @@ These details make a description much stronger than a generic “track books and
 
 **Goal:** Practise expressing requirements, rules, and examination findings so that another person can understand them without confusion.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Rewrite the most important sections of a description or examination note as if explaining them to a classmate who has not seen the original work.
-- [ ] Focus on clarity, order, and the removal of hidden assumptions.
-- [ ] Check understanding by asking (or imagining asking) the classmate to restate the main points.
-- [ ] Improve the written explanation until the main ideas transfer accurately.
+- Rewrite the most important sections of a description or examination note as if explaining them to a classmate who has not seen the original work.
+- Focus on clarity, order, and the removal of hidden assumptions.
+- Check understanding by asking (or imagining asking) the classmate to restate the main points.
+- Improve the written explanation until the main ideas transfer accurately.
 
 **Everyday starting point**  
 You have written a clear description for a system. Now you need to explain it to a classmate or a parent so they can understand what the system is supposed to do and how you checked it. If your explanation is unclear, they will not be able to follow your thinking.
@@ -103,11 +103,11 @@ Clearer version:
 
 **Goal:** Begin to consider the effects that systems can have on people and the importance of reliability and care.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Select one of the systems designed in Module 06 and write a short analysis covering who might use it, what could go wrong if rules fail, what information needs protection, and a responsible response to a serious error.
-- [ ] Identify one concrete step that could reduce the risk of harm.
-- [ ] Reflect on why the ability to examine solutions carefully is connected to responsibility.
+- Select one of the systems designed in Module 06 and write a short analysis covering who might use it, what could go wrong if rules fail, what information needs protection, and a responsible response to a serious error.
+- Identify one concrete step that could reduce the risk of harm.
+- Reflect on why the ability to examine solutions carefully is connected to responsibility.
 
 **Everyday starting point**  
 A simple classroom points system or inventory tracker may seem small, but mistakes can still cause frustration, unfairness, or loss of information. Thinking about possible consequences is part of building systems carefully.
@@ -144,11 +144,11 @@ System: Classroom supply tracker
 
 **Goal:** Create a simple, sustainable plan for continued learning that keeps the guiding principles at the centre.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] For each of the five guiding principles, write one concrete practice you will continue.
-- [ ] Choose one technical area and one broader area to strengthen next.
-- [ ] Write a short three-month learning intention that includes what you will study, how you will apply the guiding principles, and how you will know you are making progress (in terms of clarity of thinking and quality of examination).
+- For each of the five guiding principles, write one concrete practice you will continue.
+- Choose one technical area and one broader area to strengthen next.
+- Write a short three-month learning intention that includes what you will study, how you will apply the guiding principles, and how you will know you are making progress (in terms of clarity of thinking and quality of examination).
 
 **Everyday starting point**  
 Learning works better when it is steady and deliberate rather than occasional bursts of activity. A short written plan helps you keep the important habits alive after you finish this syllabus.
@@ -181,10 +181,10 @@ Concrete practice: “Before I ask any generative tool for a solution, I will wr
 
 **Goal:** Bring the entire learning path into a coherent personal understanding.
 
-**Expected outcomes (checklist)**  
+**Expected outcomes**  
 By the end of this lesson you should be able to:
-- [ ] Write a structured reflection (approximately one to two pages) that addresses the most important change in approach, the effect of writing precise descriptions first, an example of careful examination revealing something important, the difference between systems thinking and simply making something that appears to work, and one further question you now want to explore.
-- [ ] Review the reflection for clarity and honesty.
+- Write a structured reflection (approximately one to two pages) that addresses the most important change in approach, the effect of writing precise descriptions first, an example of careful examination revealing something important, the difference between systems thinking and simply making something that appears to work, and one further question you now want to explore.
+- Review the reflection for clarity and honesty.
 
 **Activity:**
 1. Write a structured reflection (approximately one to two pages) that addresses the following:
