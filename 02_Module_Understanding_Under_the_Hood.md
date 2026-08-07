@@ -1,0 +1,131 @@
+# Module 02: Understanding What Happens Under the Hood
+
+## Module Overview
+
+This module builds a conceptual bridge between a human description of behaviour and the instructions a computer actually executes. The student does not need to master machine code. The goal is to develop an accurate mental model of the transformation from intention to execution, so that later work with generative systems can be examined with understanding rather than treated as magic.
+
+**Estimated total time:** 3–5 hours.
+
+**Core objectives:**
+- Explain, in simple terms, the difference between source instructions and machine instructions.
+- Understand the role of translation (compilation or interpretation) at a conceptual level.
+- Recognise that the same human intention can be realised by different sequences of low-level instructions.
+- Practise asking how a high-level description becomes concrete actions inside the machine.
+
+---
+
+## Lesson 2.1 – Source Instructions versus Machine Instructions
+
+**Duration:** 25–35 minutes
+
+**Goal:** Distinguish clearly between the instructions a human writes and the instructions a processor executes.
+
+**Activity:**
+1. In your notebook, write a very simple instruction in ordinary English (example: “Add 5 and 3 and remember the result”).
+2. Write the same idea as a short Python statement.
+3. Reflect on the fact that the Python statement is still written for humans. The processor does not understand Python directly.
+4. Research or recall that the processor understands only very simple operations expressed as patterns of electrical signals (often represented as 0s and 1s). Write two or three sentences explaining this difference in your own words.
+5. Ask: Why do humans prefer to write the higher-level form?
+
+**Reflection:**
+- Why is the human-readable form useful even though the machine cannot execute it directly?
+- Under what conditions would working only with machine instructions become impractical for a person?
+
+**Principle focus:** Understanding over memorisation; asking why a particular form is used.
+
+---
+
+## Lesson 2.2 – The Idea of Translation
+
+**Duration:** 25–35 minutes
+
+**Goal:** Understand that a translator (compiler or interpreter) converts human-oriented instructions into machine-oriented instructions.
+
+**Activity:**
+1. Write a precise description of a tiny program (for example: ask the user for a number and display that number multiplied by two).
+2. Implement it in Python and run it.
+3. In your notebook, explain that a translator had to convert your Python instructions into a form the processor could execute.
+4. Consider this analogy: a translator is similar to a person who takes a recipe written in one language and rewrites it in the exact language the cook understands. Write down the strengths and limitations of this analogy.
+5. Ask: What could go wrong if the translator misunderstands the original instructions?
+
+**Reflection:**
+- Why is the translation step necessary?
+- Under what conditions might the translated instructions produce a different result from the one the human intended?
+
+**Principle focus:** Examining the process; identifying possible failure points.
+
+---
+
+## Lesson 2.3 – Different Paths to the Same Result
+
+**Duration:** 30–40 minutes
+
+**Goal:** Recognise that many different sequences of low-level instructions can achieve the same observable behaviour.
+
+**Activity:**
+1. Write a precise description of a simple calculation (example: find the sum of the numbers 1 through 5).
+2. Implement the calculation in Python in two different ways (for example, using a loop and using a direct formula).
+3. Confirm that both produce the same result.
+4. In your notebook, explain that both versions will be translated into machine instructions, and that those machine instructions may differ in length or efficiency even though the final answer is identical.
+5. Ask: Why might one version be preferable to the other even if both give the correct answer?
+
+**Reflection:**
+- Why can two correct solutions look different at the lower level?
+- Under what conditions would the difference in efficiency become important?
+
+**Principle focus:** Understanding that correctness alone is not the only consideration; examining alternatives; trade-offs.
+
+---
+
+## Lesson 2.4 – Memory and the Idea of State
+
+**Duration:** 25–35 minutes
+
+**Goal:** Form a basic mental model of how a program remembers information while it runs.
+
+**Activity:**
+1. Write a short Python program that stores a value, changes it, and then uses the new value.
+2. In your notebook, describe what must be happening inside the computer for the program to “remember” the value between steps.
+3. Introduce the simple idea that the computer has a temporary workspace (memory) where values are kept while the program runs.
+4. Ask: What would happen if the workspace were cleared in the middle of the program?
+5. Write one sentence explaining why understanding memory helps when examining a generated solution.
+
+**Reflection:**
+- Why does a program need a place to keep intermediate results?
+- Under what conditions could a program lose information it still needs?
+
+**Principle focus:** Building conceptual understanding; asking about failure conditions.
+
+---
+
+## Lesson 2.5 – Connecting Intention to Execution
+
+**Duration:** 30–40 minutes
+
+**Goal:** Practise tracing a clear human intention all the way to observable behaviour, while remaining aware of the hidden translation steps.
+
+**Activity:**
+1. Choose a simple interactive behaviour (example: “Ask for a name and then greet the person by name”).
+2. Write a precise specification of the intended behaviour, including what should happen if the input is empty.
+3. Implement the behaviour.
+4. Test it carefully.
+5. In your notebook, write a short paragraph that begins with the human intention, moves through the high-level instructions, notes that translation occurred, and ends with the observed result.
+6. Identify one place in the chain where a misunderstanding could have produced a wrong result.
+
+**Reflection:**
+- Why is it useful to keep the entire chain from intention to result in mind?
+- How does this habit prepare you to examine solutions generated by an artificial intelligence system?
+
+**Principle focus:** Precise description first; examining the whole process; identifying points of possible failure.
+
+---
+
+## Module 02 Completion Check
+
+Before moving to Module 03, confirm that you can:
+- Explain the difference between human-oriented instructions and machine-oriented instructions in your own words.
+- Describe the role of translation at a conceptual level.
+- Recognise that correct behaviour can be achieved by different internal sequences of instructions.
+- Trace a simple intention through to its observed result while remaining aware of the hidden steps.
+
+Record a short reflection on the most surprising idea you encountered in this module.
