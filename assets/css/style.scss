@@ -59,30 +59,33 @@ header .site-hero h2 {
   max-width: 760px;
   margin: 14px auto 0;
   text-align: center;
-  color: #b8ecff;
+  color: #fff;
   font-size: 22px;
   line-height: 1.35;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.5), 0 1px 3px rgba(0, 0, 0, 0.35);
 }
 
 @media screen and (max-width: 767px) {
   header .site-header-inner {
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 0;
   }
 
   header .site-hero {
-    padding-top: 12px;
+    padding: 16px 16px 12px;
   }
 
   header .site-hero h1 {
-    white-space: normal;
-    font-size: 36px;
+    white-space: normal !important;
+    font-size: clamp(22px, 6.5vw, 32px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.5px;
+    padding: 0 4px;
   }
 
   header .site-hero h2 {
-    font-size: 20px;
+    display: none;
   }
 }
 
@@ -136,7 +139,7 @@ header .site-hero h2 {
 
 .course-nav-heading {
   margin: 0 0 10px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -160,6 +163,7 @@ header .site-hero h2 {
   color: #24292e;
   text-decoration: none;
   line-height: 1.35;
+  font-size: 14px;
 }
 
 .course-nav-tree a:hover {
@@ -182,7 +186,7 @@ header .site-hero h2 {
 }
 
 .course-nav-section a {
-  font-size: 11px;
+  font-size: 13px;
   color: #586069;
 }
 
@@ -209,16 +213,16 @@ header .site-hero h2 {
   color: #24292e;
 }
 
-.main-content ul.expected-outcomes {
+#main-content ul.expected-outcomes {
   list-style: none;
   padding-left: 1.25rem;
 }
 
-.main-content ul.expected-outcomes li {
+#main-content ul.expected-outcomes li {
   position: relative;
 }
 
-.main-content ul.expected-outcomes li::before {
+#main-content ul.expected-outcomes li::before {
   content: "▸";
   position: absolute;
   left: -1.25rem;
