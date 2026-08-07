@@ -3,7 +3,7 @@
 
 @import "{{ site.theme }}";
 
-/* Header: profile image overlay + centered hero + NimbusCoder top-right */
+/* Header: profile image overlay + centered hero */
 header {
   position: relative;
   overflow: hidden;
@@ -27,26 +27,6 @@ header .site-header-inner {
   justify-content: center;
   position: relative;
   z-index: 1;
-}
-
-header .site-brand {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: auto;
-  z-index: 2;
-  line-height: 0;
-  text-decoration: none;
-}
-
-header .site-brand-logo {
-  display: block;
-  height: 52px;
-  width: auto;
-}
-
-header .site-brand:hover .site-brand-logo {
-  opacity: 0.88;
 }
 
 header .site-hero {
@@ -90,15 +70,6 @@ header .site-hero h2 {
     flex-direction: column;
     align-items: center;
     gap: 16px;
-  }
-
-  header .site-brand {
-    position: static;
-    align-self: flex-end;
-  }
-
-  header .site-brand-logo {
-    height: 44px;
   }
 
   header .site-hero {

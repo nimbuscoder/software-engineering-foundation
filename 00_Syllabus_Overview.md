@@ -1,6 +1,6 @@
 # Software Engineering Foundations for the Age of Generative Systems
 
-## A Self-Study Curriculum for Young Learners (Age 12 and Above)
+## For Secondary Students and Beyond
 
 ### Purpose
 
