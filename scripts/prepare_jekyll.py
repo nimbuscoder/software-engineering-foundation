@@ -113,6 +113,32 @@ def enhance_syllabus(content: str) -> str:
     return content
 
 
+def tag_expected_outcomes_lists(content: str) -> str:
+    """Add a Kramdown class to bullet lists under **Expected outcomes**."""
+    lines = content.splitlines()
+    result: list[str] = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if line.strip() == "**Expected outcomes**":
+            result.append(line)
+            i += 1
+            if i < len(lines) and lines[i].startswith("By the end of"):
+                result.append(lines[i])
+                i += 1
+            list_items: list[str] = []
+            while i < len(lines) and lines[i].startswith("- "):
+                list_items.append(lines[i])
+                i += 1
+            result.extend(list_items)
+            if list_items:
+                result.append("{: .expected-outcomes}")
+            continue
+        result.append(line)
+        i += 1
+    return "\n".join(result)
+
+
 def clean_generated_pages() -> None:
     for page in GENERATED_PAGES:
         path = ROOT / page
@@ -139,7 +165,9 @@ def main() -> None:
         if not source_path.exists():
             raise FileNotFoundError(f"Missing {source_name}")
 
-        body = source_path.read_text(encoding="utf-8") + module_nav(number)
+        body = tag_expected_outcomes_lists(
+            source_path.read_text(encoding="utf-8")
+        ) + module_nav(number)
         write_page(
             ROOT / f"module-{number}.md",
             {"layout": "default", "title": title, "permalink": f"/module-{number}/"},

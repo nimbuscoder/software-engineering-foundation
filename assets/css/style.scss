@@ -21,6 +21,23 @@
   color: #24292e;
 }
 
+.main-content ul.expected-outcomes {
+  list-style: none;
+  padding-left: 1.25rem;
+}
+
+.main-content ul.expected-outcomes li {
+  position: relative;
+}
+
+.main-content ul.expected-outcomes li::before {
+  content: "▸";
+  position: absolute;
+  left: -1.25rem;
+  color: #4078c0;
+  font-weight: bold;
+}
+
 .main-content pre {
   border-radius: 6px;
 }
