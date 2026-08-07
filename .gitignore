@@ -28,7 +28,8 @@ vendor/
 
 # Generated Jekyll pages (built from source markdown)
 index.md
-module-*.md
+module-*/
+_data/navigation.yml
 
 # Legacy MkDocs output
 site/

@@ -1,0 +1,28 @@
+<nav class="course-nav" aria-label="Course navigation">
+  <h3 class="course-nav-heading">Contents</h3>
+  <ul class="course-nav-tree">
+    <li class="course-nav-item{% if page.title == 'Home' %} is-active{% endif %}">
+      <a href="{{ '/' | relative_url }}">Home</a>
+    </li>
+    {% for module in site.data.navigation.modules %}
+      {% assign is_current_module = false %}
+      {% if page.module == module.number %}
+        {% assign is_current_module = true %}
+      {% endif %}
+      <li class="course-nav-item course-nav-module{% if is_current_module %} is-open{% endif %}">
+        <a href="{{ module.url | relative_url }}"{% if page.section == 'module-overview' and is_current_module %} class="is-current-module"{% endif %}>
+          {{ module.short_title }}
+        </a>
+        {% if is_current_module and module.sections.size > 0 %}
+          <ul class="course-nav-sections">
+            {% for section in module.sections %}
+              <li class="course-nav-section{% if page.section == section.slug %} is-active{% endif %}">
+                <a href="{{ section.url | relative_url }}">{{ section.short_title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

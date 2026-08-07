@@ -1,7 +1,8 @@
 title: Software Engineering Foundations
 description: >-
-  A self-study syllabus for young learners (ages 12–15) — systems thinking,
-  precise problem formulation, and evaluating machine-generated solutions.
+  A self-study course for secondary students — learn to break problems into
+  clear steps, describe your ideas precisely, and check whether AI-generated
+  answers really work.
 url: https://nimbuscoder-io.github.io
 baseurl: /software-engineering-foundation
 repository: nimbuscoder-io/software-engineering-foundation

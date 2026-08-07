@@ -47,29 +47,144 @@ MODULES = [
     ),
 ]
 
-GENERATED_PAGES = ["index.md", *[f"module-{number}.md" for number, _, _ in MODULES]]
+NAVIGATION_DATA = ROOT / "_data" / "navigation.yml"
+
+H2_HEADING = re.compile(r"^## (.+)$", re.MULTILINE)
+LESSON_HEADING = re.compile(r"^Lesson (\d+)\.(\d+)\s*[–-]\s*(.+)$")
+COMPLETION_HEADING = re.compile(r"^Module (\d+) Completion Check$")
 
 
-def module_nav(current: str) -> str:
-    index = next(i for i, (number, _, _) in enumerate(MODULES) if number == current)
-    parts = ["", "---", "", "**Navigate:** [Home]({{ '/' | relative_url }})"]
+def heading_slug(title: str) -> str:
+    lesson = LESSON_HEADING.match(title)
+    if lesson:
+        return f"lesson-{lesson.group(1)}-{lesson.group(2)}"
 
-    if index > 0:
-        prev_number = MODULES[index - 1][0]
-        parts.append(f" · [Module {prev_number} ←]({{{{ '/module-{prev_number}/' | relative_url }}}})")
+    if title == "Module Overview":
+        return "module-overview"
 
-    if index < len(MODULES) - 1:
-        next_number = MODULES[index + 1][0]
-        parts.append(f" · [Module {next_number} →]({{{{ '/module-{next_number}/' | relative_url }}}})")
+    completion = COMPLETION_HEADING.match(title)
+    if completion:
+        return f"module-{completion.group(1)}-completion-check"
 
-    parts.append("")
-    return "\n".join(parts)
+    slug = title.lower()
+    slug = re.sub(r"[^\w\s-]", "", slug)
+    slug = re.sub(r"[\s_]+", "-", slug).strip("-")
+    return slug
+
+
+def section_short_title(title: str) -> str:
+    lesson = LESSON_HEADING.match(title)
+    if lesson:
+        return f"{lesson.group(1)}.{lesson.group(2)} {lesson.group(3)}"
+
+    if title == "Module Overview":
+        return "Overview"
+
+    completion = COMPLETION_HEADING.match(title)
+    if completion:
+        return "Completion check"
+
+    return title
+
+
+def section_url(module_number: str, slug: str) -> str:
+    if slug == "module-overview":
+        return f"/module-{module_number}/"
+    return f"/module-{module_number}/{slug}/"
+
+
+def split_module_sections(content: str) -> tuple[str, list[dict[str, str]]]:
+    lines = content.splitlines()
+    module_heading = ""
+    start_idx = 0
+    if lines and lines[0].startswith("# "):
+        module_heading = lines[0]
+        start_idx = 1
+        while start_idx < len(lines) and not lines[start_idx].strip():
+            start_idx += 1
+
+    sections: list[dict[str, str]] = []
+    current_title: str | None = None
+    current_lines: list[str] = []
+
+    def flush_section() -> None:
+        nonlocal current_title, current_lines
+        if current_title is None:
+            return
+
+        body_lines: list[str] = []
+        for line in current_lines:
+            if line.strip() == "---":
+                continue
+            body_lines.append(line)
+
+        slug = heading_slug(current_title)
+        sections.append(
+            {
+                "title": current_title,
+                "short_title": section_short_title(current_title),
+                "slug": slug,
+                "body": "\n".join(body_lines).strip(),
+            }
+        )
+        current_title = None
+        current_lines = []
+
+    for line in lines[start_idx:]:
+        h2_match = H2_HEADING.match(line)
+        if h2_match:
+            flush_section()
+            current_title = h2_match.group(1).strip()
+            current_lines = [line]
+        elif current_title is not None:
+            current_lines.append(line)
+
+    flush_section()
+    return module_heading, sections
+
+
+def module_short_title(full_title: str) -> str:
+    prefix = "Module "
+    if full_title.startswith(prefix):
+        return full_title.split(" — ", 1)[0]
+    return full_title
+
+
+def write_navigation_data() -> None:
+    NAVIGATION_DATA.parent.mkdir(parents=True, exist_ok=True)
+    lines = ["modules:"]
+
+    for number, source_name, title in MODULES:
+        source_path = ROOT / source_name
+        sections = split_module_sections(source_path.read_text(encoding="utf-8"))[1]
+        short_title = module_short_title(title)
+
+        lines.append(f"  - number: {yaml_string(number)}")
+        lines.append(f"    title: {yaml_string(title)}")
+        lines.append(f"    short_title: {yaml_string(short_title)}")
+        lines.append(f"    url: {yaml_string(section_url(number, 'module-overview'))}")
+        lines.append("    sections:")
+
+        for section in sections:
+            url = section_url(number, section["slug"])
+            lines.append(f"      - title: {yaml_string(section['title'])}")
+            lines.append(f"        short_title: {yaml_string(section['short_title'])}")
+            lines.append(f"        slug: {yaml_string(section['slug'])}")
+            lines.append(f"        url: {yaml_string(url)}")
+
+    NAVIGATION_DATA.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def yaml_string(value: str) -> str:
+    escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+    return f'"{escaped}"'
 
 
 def write_page(path: Path, front_matter: dict[str, str], body: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     fm_lines = ["---"]
     for key, value in front_matter.items():
-        fm_lines.append(f"{key}: {value}")
+        fm_lines.append(f"{key}: {yaml_string(value)}")
     fm_lines.append("---")
     path.write_text("\n".join(fm_lines) + "\n\n" + body.strip() + "\n", encoding="utf-8")
 
@@ -139,15 +254,64 @@ def tag_expected_outcomes_lists(content: str) -> str:
     return "\n".join(result)
 
 
+def prepare_section_body(content: str) -> str:
+    return tag_expected_outcomes_lists(content)
+
+
 def clean_generated_pages() -> None:
-    for page in GENERATED_PAGES:
-        path = ROOT / page
-        if path.exists():
+    index = ROOT / "index.md"
+    if index.exists():
+        index.unlink()
+
+    for path in sorted(ROOT.glob("module-*")):
+        if path.is_dir():
+            shutil.rmtree(path)
+        elif path.is_file():
             path.unlink()
+
+
+def generate_module_pages(number: str, source_name: str, module_title: str) -> int:
+    source_path = ROOT / source_name
+    module_heading, sections = split_module_sections(
+        source_path.read_text(encoding="utf-8")
+    )
+    module_dir = ROOT / f"module-{number}"
+    page_count = 0
+
+    for section in sections:
+        slug = section["slug"]
+        permalink = section_url(number, slug)
+
+        if slug == "module-overview":
+            path = module_dir / "index.md"
+            page_title = module_title
+            body = section["body"]
+            if module_heading:
+                body = f"{module_heading}\n\n{body}"
+        else:
+            path = module_dir / f"{slug}.md"
+            page_title = f"{section['title']} — {module_short_title(module_title)}"
+            body = section["body"]
+
+        write_page(
+            path,
+            {
+                "layout": "default",
+                "title": page_title,
+                "permalink": permalink,
+                "module": number,
+                "section": slug,
+            },
+            prepare_section_body(body),
+        )
+        page_count += 1
+
+    return page_count
 
 
 def main() -> None:
     clean_generated_pages()
+    write_navigation_data()
 
     syllabus_path = ROOT / "00_Syllabus_Overview.md"
     if not syllabus_path.exists():
@@ -160,21 +324,13 @@ def main() -> None:
         syllabus,
     )
 
+    total_pages = 1
     for number, source_name, title in MODULES:
-        source_path = ROOT / source_name
-        if not source_path.exists():
+        if not (ROOT / source_name).exists():
             raise FileNotFoundError(f"Missing {source_name}")
+        total_pages += generate_module_pages(number, source_name, title)
 
-        body = tag_expected_outcomes_lists(
-            source_path.read_text(encoding="utf-8")
-        ) + module_nav(number)
-        write_page(
-            ROOT / f"module-{number}.md",
-            {"layout": "default", "title": title, "permalink": f"/module-{number}/"},
-            body,
-        )
-
-    print(f"Generated {len(GENERATED_PAGES)} Jekyll pages.")
+    print(f"Generated {total_pages} Jekyll pages.")
 
 
 if __name__ == "__main__":
